@@ -1,0 +1,76 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codyze – Contributing to Codyze</title>
+    <link>https://fraunhofer-aisec.github.io/codyze/docs/contributors/</link>
+    <description>Recent content in Contributing to Codyze on Codyze</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://fraunhofer-aisec.github.io/codyze/docs/contributors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Build the project</title>
+      <link>https://fraunhofer-aisec.github.io/codyze/docs/contributors/code/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://fraunhofer-aisec.github.io/codyze/docs/contributors/code/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java (OpenJDK) 11 or later&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;check-out-build-and-extend-codyze&#34;&gt;Check out, build, and extend Codyze&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Fork the &lt;a href=&#34;https://github.com/Fraunhofer-AISEC/codyze&#34;&gt;Codyze repo&lt;/a&gt; on GitHub and clone it, including submodules:&lt;br&gt;&lt;code&gt;git clone --recurse-submodules git://github.com/&amp;lt;YOUR GITHUB&amp;gt;/codyze&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a branch for your contribution. We recommend prefixing the branch name with &lt;code&gt;fix-&lt;/code&gt; if you are providing a bug fix or &lt;code&gt;feature-&lt;/code&gt; if you plan to add a feature:&lt;br&gt;&lt;code&gt;git checkout -b feature-MY_EPIC_FEATURE&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Make your changes and make sure that the project builds without errors, passes all tests, and is properly formatted:&lt;br&gt;&lt;code&gt;./gradlew clean spotlessApply build publishToMavenLocal installDist&lt;/code&gt;&lt;br&gt;
+The purpose of these gradle tasks is as follows:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;clean&lt;/em&gt; Removes previous build artifacts&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;spotlessApply&lt;/em&gt; Applies source code formatting with the settings in &lt;code&gt;formatter-settings.xml&lt;/code&gt;. If the code is not properly formatted the build server will reject it.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;build&lt;/em&gt; Builds the main artifact (the jar file containing Codyze)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;publishToMavenLocal&lt;/em&gt; (optional) publishes the build artifact to your local Maven repository so it is available as a dependency for other projects&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;installDist&lt;/em&gt; Create an executable script for Linux, Mac, and Windows in &lt;code&gt;build/install/codyze/bin&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;When everything works, &lt;code&gt;git commit&lt;/code&gt; your changes and &lt;code&gt;git push&lt;/code&gt; them to Github, then create a pull request (PR). Make sure to describe want you intend the code to do and refer to any issues your PR might address (using the notation &lt;code&gt;#123&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If you&#39;re not yet ready for a review, add &amp;ldquo;WIP&amp;rdquo; to the PR name to indicate it&#39;s a work in progress.&lt;/li&gt;
+&lt;li&gt;Wait for the automated CI workflow to do some checks.&lt;/li&gt;
+&lt;li&gt;Continue working on your PR by pushing further commits to your branch until you are satisfied&lt;/li&gt;
+&lt;li&gt;When you&#39;re ready for a review, add a comment to the PR, and remove any &amp;ldquo;WIP&amp;rdquo; markers.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;code-formatting&#34;&gt;Code formatting&lt;/h2&gt;
+&lt;p&gt;Codyze uses the gradle &lt;em&gt;spotless&lt;/em&gt; plugin to format source code. You may import the code style definitions into your favorite IDE to apply it immediately.&lt;/p&gt;
+&lt;h3 id=&#34;gradle&#34;&gt;Gradle&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Simply run &lt;code&gt;./gradlew spotlessApply&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;intellij&#34;&gt;IntelliJ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In IntelliJ, open &lt;em&gt;Settings-&amp;gt;Editor-&amp;gt;Code Style-&amp;gt;Java&lt;/em&gt; and click on the cog icon.&lt;/li&gt;
+&lt;li&gt;Choose &lt;em&gt;Import Scheme-&amp;gt;Eclipse XML Profile&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/intellij-formatter.png&#34; 
+alt=&#34;Import code style formatter into IntelliJ&#34;
+class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;eclipse&#34;&gt;Eclipse&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In Eclipse, open &lt;em&gt;Window-&amp;gt;Preferences-&amp;gt;Java-&amp;gt;Code Style-&amp;gt;Formatter&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;em&gt;Import&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/eclipse-formatter.png&#34; 
+alt=&#34;Import code style formatter into Eclipse&#34;
+class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

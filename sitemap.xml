@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/installation/</loc>
+    <lastmod>2020-03-24T13:22:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/contributors/code/</loc>
+    <lastmod>2020-01-31T21:00:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/getting-started/installation/</loc>
+    <lastmod>2020-03-27T18:04:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/overview/</loc>
+    <lastmod>2020-02-29T17:52:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/getting-started/cli/</loc>
+    <lastmod>2020-01-31T21:00:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/define-entities/</loc>
+    <lastmod>2020-03-22T20:31:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/getting-started/</loc>
+    <lastmod>2020-01-31T21:00:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/</loc>
+    <lastmod>2020-03-22T20:31:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/mark-authors/</loc>
+    <lastmod>2020-03-22T20:31:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/contributors/</loc>
+    <lastmod>2020-01-31T21:00:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/docs/</loc>
+    <lastmod>2020-02-29T17:52:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/index.json</loc>
+    <lastmod>2020-01-16T09:01:34+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/</loc>
+    <lastmod>2020-02-29T17:52:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/community/</loc>
+    <lastmod>2020-01-16T09:01:34+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fraunhofer-aisec.github.io/codyze/search/</loc>
+    <lastmod>2020-01-16T09:01:34+01:00</lastmod>
+  </url>
+  
+</urlset>

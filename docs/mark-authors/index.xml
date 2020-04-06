@@ -1,0 +1,252 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codyze – Write MARK Policies</title>
+    <link>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/</link>
+    <description>Recent content in Write MARK Policies on Codyze</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Install MARK IDE</title>
+      <link>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/installation/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/installation/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MARK is a simple domain specific language (DSL) that can be written in any text editor. We recommend however using the MARK Eclipse plugin which brings syntax highlighting, auto-completion, and some other benefits that will support you in writing MARK rules.&lt;/p&gt;
+&lt;h2 id=&#34;install-the-mark-eclipse-plugin&#34;&gt;Install the MARK Eclipse Plugin&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;In Eclipse, click on &lt;code&gt;Help&lt;/code&gt;-&amp;gt;&lt;code&gt;Install new software&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the update site: &lt;code&gt;https://update.breakpoint-security.de&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install (TODO: Name of product in eclipse update site)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;start-writing-mark-policies&#34;&gt;Start writing MARK policies&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a new project by clicking on &lt;code&gt;New&lt;/code&gt;-&amp;gt;&lt;code&gt;Project&lt;/code&gt;. The project type does not matter.&lt;/li&gt;
+&lt;li&gt;Create a new file with the extension &lt;code&gt;.mark&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start writing entities and rules. You may include all entities and rules in a single MARK file or organize them in multiple files as you with. As long as all MARK files are located in the same folder, Codyze will load entities and rules from all files in that folder.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: MARK Entities</title>
+      <link>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/define-entities/</link>
+      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/define-entities/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MARK rules refer to &lt;em&gt;entities&lt;/em&gt; - abstract objects that wrap the real object classes of the analyzed programming language (in case of object oriented languages) and group methods with similar semantics in so-called _op_s. A MARK entity defines three parts:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A &lt;em&gt;name&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;A set of &lt;em&gt;ops&lt;/em&gt; (operations)&lt;/li&gt;
+&lt;li&gt;A set of MARK &lt;em&gt;variables&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Writing MARK rules for a cryptographic library requires a good understanding of the library API and its class hierarchy. We recommend the following approach to writing MARK entities.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Model relevant classes as MARK entities&lt;/li&gt;
+&lt;li&gt;Define _op_s and variables&lt;/li&gt;
+&lt;li&gt;(Optionally) blacklist some _op_s&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;model-relevant-classes-as-mark-entities&#34;&gt;Model relevant classes as MARK entities&lt;/h2&gt;
+&lt;p&gt;It is certainly not necessary to model all classes of the software library as MARK entities. Rather, you need to identify those classes which hold cryptographic relevant data or provide cryptographic functions. Although in many cases, several classes of the programming language can be summarized in one abstract MARK entity, it might be easier to directly map classes to entities in the first iteration.&lt;/p&gt;
+&lt;p&gt;The name of an entity can be freely chosen. If it refers to a specific class in the programming language, though, it might make sense to name them accordingly.&lt;/p&gt;
+&lt;h2 id=&#34;define-ops-and-variables&#34;&gt;Define Ops and variables&lt;/h2&gt;
+&lt;p&gt;The next step is to define _op_s. An &lt;em&gt;op&lt;/em&gt; is a group of semantically equal or similar functions, methods, or constructors, given as fully qualified signatures. Especially overloaded functions with the same name but different parameters are candidates for being grouped in an &lt;em&gt;op&lt;/em&gt;. For cryptographic libraries, typical _op_s are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;instantiate&lt;/code&gt; - a group of functions for instantiating a class or creating an object of a class&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;initialize&lt;/code&gt; - a group of functions that initialize a cryptographic algorithms, e.g. by setting a key or initialization vector.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;update&lt;/code&gt; - a group of functions that process further data by a cryptographic algorithm&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;finalize&lt;/code&gt;- a group of functions that terminate a cryptographic algorithm&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;reset&lt;/code&gt;- a group of functions that reset a cryptographic algorithm and make it ready for further processing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The name of an &lt;em&gt;op&lt;/em&gt; can be freely chosen. When specifying fully qualified function or method signatures in an &lt;em&gt;op&lt;/em&gt;, parameters are typed and can be &lt;em&gt;unnamed&lt;/em&gt; or &lt;em&gt;named&lt;/em&gt;. Unnamed parameters are indicated by the name &amp;ldquo;_&amp;rdquo; and do not play any role in the definition of rules. Named parameters refer to MARK variables and can be used when writing rules. We recommend to name only those parameters which are required in rules, as named parameters will increase the memory cost and runtime of the analysis.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; The following &lt;code&gt;op&lt;/code&gt; &lt;em&gt;instantiate&lt;/em&gt; refers to only a single Java method, called &lt;code&gt;de.example.Crypto.getInstance&lt;/code&gt;. Neither the return type, nor modifiers such as &lt;code&gt;public&lt;/code&gt;, &lt;code&gt;static&lt;/code&gt;, &lt;code&gt;final&lt;/code&gt; etc. are given in MARK. The method signature contains one named parameter of type &lt;code&gt;java.lang.String&lt;/code&gt; and one unnamed parameter without type restriction. Note that the name of the parameter does not relate to the parameter name in the programming language, but rather to a MARK variable.&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; instantiate {
+  de.example.Crypto.getInstance(
+    algorithm : java.lang.String,    // Named typed parameter
+    _                                // Unnamed untyped parameter
+  );
+}
+&lt;/pre&gt;
+&lt;p&gt;So, this MARK &lt;code&gt;op&lt;/code&gt; would include the following methods of a class &lt;code&gt;de.example.Crypto&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;public static Crypto getInstance(String x, String y)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;private void getInstance(String x, byte y)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It would however &lt;em&gt;not&lt;/em&gt; include a method &lt;code&gt;void getInstance(String x)&lt;/code&gt; (wrong number of parameters) or &lt;code&gt;getInstance(byte x, String y)&lt;/code&gt; (wrong type of 1st parameter).&lt;/p&gt;
+&lt;p&gt;To make use of named parameters, they must additionally be declared as entity variables using the &lt;code&gt;var&lt;/code&gt; keyword:&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;entity&lt;/span&gt; Crypto {
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; algorithm;  // this makes parameter &#34;algorithm&#34; available when writing rules.
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; instantiate {
+    de.example.Crypto.getInstance(
+      algorithm : java.lang.String,    // Named typed parameter
+      _                                // Unnamed untyped parameter
+    );
+  }
+}
+&lt;/pre&gt;
+&lt;h2 id=&#34;optionally-blacklist-some-opss&#34;&gt;(Optionally) blacklist some _ops_s&lt;/h2&gt;
+&lt;p&gt;In some cases, groups of functions or methods should not be used at all by a program. This applies e.g. to deprecated functions or functions that are known to be insecure. MARK provides a shortcut to mark any use of such functions as insecure: the &lt;code&gt;forbidden&lt;/code&gt; keyword.&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;entity&lt;/span&gt; Crypto {
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; instantiate {
+    de.example.Crypto.getInstance(
+      algorithm : java.lang.String,    // Named typed parameter
+      _                                // Unnamed untyped parameter
+    );
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;forbidden&lt;/span&gt; de.example.Crypto.getInstanceDeprecated();  // Any use of this function will be flagged
+  }
+}
+&lt;/pre&gt;
+&lt;p&gt;Any occurrence of &lt;code&gt;getInstanceDeprecated()&lt;/code&gt; in the program will be marked as insecure, without further evaluation of rules. This is not only a shortcut, removing the need to write separate rules, but also a way to cut down analysis time, as Codyze does not need to find instances of the entity, but will rather indicate the error immediately when it sees a usage of the method.&lt;/p&gt;
+&lt;h2 id=&#34;complete-example&#34;&gt;Complete Example&lt;/h2&gt;
+&lt;pre&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;entity&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;org.bouncycastle.crypto.digests.SHA512Digest&lt;/span&gt; 
+           &lt;span style=&#34;color:#c4a000&#34;&gt;isa org.bouncycastle.crypto.Digest&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; instance : org.bouncycastle.crypto.digests.SHA512Digest; // Alternative for `this`
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; encodedState : byte[];
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; copy : org.bouncycastle.crypto.digests.SHA512Digest;
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; inByte : byte;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; inByteArray : byte[];
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; inByteArrayOff : int;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; inByteArraylen : int;
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; outArray : byte[];
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; outArrayOff : int;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; resultLen : int;
+  
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; instantiate &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        this = org.bouncycastle.crypto.digests.SHA512Digest();
+        this = org.bouncycastle.crypto.digests.SHA512Digest(encodedState);
+        instance = org.bouncycastle.crypto.digests.SHA512Digest(copy);
+    &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; update &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    org.bouncycastle.crypto.digests.SHA512Digest.update(inByte);
+    org.bouncycastle.crypto.digests.SHA512Digest.update(inByteArray, inByteArrayOff, inByteArrayLen);
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; finish &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    org.bouncycastle.crypto.digests.SHA512Digest.finish();
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; finalize &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    resultLen = org.bouncycastle.crypto.digests.SHA512Digest.doFinal(outArray, outArrayOff);
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;op&lt;/span&gt; reset &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    org.bouncycastle.crypto.digests.SHA512Digest.reset();
+    org.bouncycastle.crypto.digests.SHA512Digest.reset(_);
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;blockquote&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: MARK Rules</title>
+      <link>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/mark-authors/</link>
+      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/mark-authors/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Once the core functions of a cryptographic library have been modeled as MARK entities, you can start writing rules. MARK rules operate over instances of entities and define conditions which must apply to these instances. A MARK &amp;ldquo;instance&amp;rdquo; may correspond to an actual object in the program, but in the case of non-object oriented languages or static methods, it may simply be an abstract set of function calls and variables.&lt;/p&gt;
+&lt;h3 id=&#34;basic-rule-structure&#34;&gt;Basic rule structure&lt;/h3&gt;
+&lt;p&gt;MARK rules are structured as follows:&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;rule&lt;/span&gt; MyRule {
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt;
+    // instances go here
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ensure&lt;/span&gt;
+    // conditions go here
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;onfail&lt;/span&gt;
+    // error message goes here
+}
+&lt;/pre&gt;
+&lt;p&gt;Each rule has a name which must be unique across along all MARK files loaded into Codyze. The &lt;code&gt;using&lt;/code&gt; keyword starts the declaration of instances of MARK entities and the &lt;code&gt;ensure&lt;/code&gt; keyword starts the actual condition. If Codyze finds a violation of the condition in the program, it will issue a finding with the message indicated by the &lt;code&gt;onfail&lt;/code&gt; identifier.&lt;/p&gt;
+&lt;p&gt;To illustrate the process of writing MARK rules, let us assume we want to ensure that the MARK entity &lt;code&gt;Crypto&lt;/code&gt; from the previous section uses either of the two cryptographic algorithms &lt;code&gt;Algo1&lt;/code&gt; or &lt;code&gt;Algo2&lt;/code&gt; and that the algorithm is initiated with a parameter which is longer than 16 bytes.&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;rule&lt;/span&gt; ID_2 {
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt;
+    Crypto &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;as&lt;/span&gt; c,                   // instance c of MARK entity Crypto
+    CryptoParameter &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;as&lt;/span&gt; cp          // instance cp of MARK entity CryptoParameter
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ensure&lt;/span&gt;
+    _is(c.param, cp)               // variable c.param == cp
+    &amp;&amp; _length(cp.rawData) &gt;= 16   // byte length of cp.rawData &gt;= 16
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;onfail&lt;/span&gt;
+  // todo
+}
+&lt;/pre&gt;
+&lt;h3 id=&#34;preconditions&#34;&gt;Preconditions&lt;/h3&gt;
+&lt;p&gt;Some rules only apply if certain preconditions are fulfiled, i.e. such preconditions will be evaluated before the actual condition. If they fail, the main condition will not be evaluated and the rule will not return any result (i.e. it will neither confirm a valid program nor flag a wrong program). Preconditions follow the same syntax as the main condition, but are declared by the &lt;code&gt;when&lt;/code&gt; keyword.&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;rule&lt;/span&gt; ID_2 {
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt;
+    Crypto &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;as&lt;/span&gt; c,                   // instance c of MARK entity Crypto
+    CryptoParameter &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;as&lt;/span&gt; cp          // instance cp of MARK entity CryptoParameter
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;when&lt;/span&gt;
+    c.algorithm == &#34;Algo1&#34;         // rule is only relevant for &#34;Algo1&#34;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ensure&lt;/span&gt;
+    _is(c.param, cp)               // variable c.param == cp
+    &amp;&amp; _length(cp.rawData) &gt;= 16   // byte length of cp.rawData &gt;= 16
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;onfail&lt;/span&gt;
+  // todo
+}
+&lt;/pre&gt;
+&lt;h3 id=&#34;builtin-predicates&#34;&gt;Built-in Predicates&lt;/h3&gt;
+&lt;p&gt;MARK comes with a number of built in functions that can be used as predicates in conditions and preconditions. These built-ins are called when MARK rules are evaluated and operate over their input arguments (typically MARK objects or constants) and the current evaluation context. By convention, built-ins should start with an underscore (&lt;code&gt;_&lt;/code&gt;). When a built-in fails, it will return an &lt;code&gt;Error&lt;/code&gt; object that always evaluates to &lt;em&gt;not applicable&lt;/em&gt;, i.e. neither true nor false.&lt;/p&gt;
+&lt;h4 id=&#34;hasvalue&#34;&gt;_has_value&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;__has_value(a,b)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  ensure
+     __has_value(a, b)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK object &lt;code&gt;a&lt;/code&gt; may be assigned value &lt;code&gt;b&lt;/code&gt; (e.g., a constant).&lt;/p&gt;
+&lt;h4 id=&#34;insidesamefunction&#34;&gt;_inside_same_function&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;__inside_same_function(a,b)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  ensure
+     __inside_same_function(a, b)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK objects &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; reside in the same function.&lt;/p&gt;
+&lt;h4 id=&#34;is&#34;&gt;_is&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;_is(a,b)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  ensure
+     _is(a, b)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK object &lt;code&gt;a&lt;/code&gt; is equal to variable &lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;split&#34;&gt;_split&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;_split(String str, String splitter, int position)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  TODO&lt;/p&gt;
+&lt;p&gt;Behaves like the Java expression &lt;code&gt;String.split(String splitter)[position]&lt;/code&gt;. That is, it splits the string &lt;code&gt;str&lt;/code&gt; at all occurrences of &lt;code&gt;splitter&lt;/code&gt; and returns the &lt;code&gt;position&lt;/code&gt;th substring. Returns an &lt;code&gt;Error&lt;/code&gt; if no such occurrence is found.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
