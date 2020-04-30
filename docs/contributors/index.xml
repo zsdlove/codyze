@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codyze – Contributing to Codyze</title>
-    <link>https://fraunhofer-aisec.github.io/codyze/docs/contributors/</link>
+    <link>https://www.breakpointsec.de/docs/contributors/</link>
     <description>Recent content in Contributing to Codyze on Codyze</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://fraunhofer-aisec.github.io/codyze/docs/contributors/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://www.breakpointsec.de/docs/contributors/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Build the project</title>
-      <link>https://fraunhofer-aisec.github.io/codyze/docs/contributors/code/</link>
+      <link>https://www.breakpointsec.de/docs/contributors/code/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fraunhofer-aisec.github.io/codyze/docs/contributors/code/</guid>
+      <guid>https://www.breakpointsec.de/docs/contributors/code/</guid>
       <description>
         
         
@@ -57,7 +57,7 @@ The purpose of these gradle tasks is as follows:
 &lt;li&gt;In IntelliJ, open &lt;em&gt;Settings-&amp;gt;Editor-&amp;gt;Code Style-&amp;gt;Java&lt;/em&gt; and click on the cog icon.&lt;/li&gt;
 &lt;li&gt;Choose &lt;em&gt;Import Scheme-&amp;gt;Eclipse XML Profile&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/intellij-formatter.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/intellij-formatter.png&#34; 
 alt=&#34;Import code style formatter into IntelliJ&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;eclipse&#34;&gt;Eclipse&lt;/h3&gt;
@@ -65,7 +65,7 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;li&gt;In Eclipse, open &lt;em&gt;Window-&amp;gt;Preferences-&amp;gt;Java-&amp;gt;Code Style-&amp;gt;Formatter&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;Click &lt;em&gt;Import&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/eclipse-formatter.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/eclipse-formatter.png&#34; 
 alt=&#34;Import code style formatter into Eclipse&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 

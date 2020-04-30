@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codyze – Documentation</title>
-    <link>https://fraunhofer-aisec.github.io/codyze/docs/</link>
+    <link>https://www.breakpointsec.de/docs/</link>
     <description>Recent content in Documentation on Codyze</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://fraunhofer-aisec.github.io/codyze/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://www.breakpointsec.de/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Install MARK IDE</title>
-      <link>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/installation/</link>
+      <link>https://www.breakpointsec.de/docs/mark-authors/installation/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/installation/</guid>
+      <guid>https://www.breakpointsec.de/docs/mark-authors/installation/</guid>
       <description>
         
         
@@ -41,10 +41,10 @@
     
     <item>
       <title>Docs: Build the project</title>
-      <link>https://fraunhofer-aisec.github.io/codyze/docs/contributors/code/</link>
+      <link>https://www.breakpointsec.de/docs/contributors/code/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fraunhofer-aisec.github.io/codyze/docs/contributors/code/</guid>
+      <guid>https://www.breakpointsec.de/docs/contributors/code/</guid>
       <description>
         
         
@@ -83,7 +83,7 @@ The purpose of these gradle tasks is as follows:
 &lt;li&gt;In IntelliJ, open &lt;em&gt;Settings-&amp;gt;Editor-&amp;gt;Code Style-&amp;gt;Java&lt;/em&gt; and click on the cog icon.&lt;/li&gt;
 &lt;li&gt;Choose &lt;em&gt;Import Scheme-&amp;gt;Eclipse XML Profile&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/intellij-formatter.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/intellij-formatter.png&#34; 
 alt=&#34;Import code style formatter into IntelliJ&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;eclipse&#34;&gt;Eclipse&lt;/h3&gt;
@@ -91,7 +91,7 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;li&gt;In Eclipse, open &lt;em&gt;Window-&amp;gt;Preferences-&amp;gt;Java-&amp;gt;Code Style-&amp;gt;Formatter&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;Click &lt;em&gt;Import&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/eclipse-formatter.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/eclipse-formatter.png&#34; 
 alt=&#34;Import code style formatter into Eclipse&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 
@@ -100,10 +100,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: Install Codyze</title>
-      <link>https://fraunhofer-aisec.github.io/codyze/docs/getting-started/installation/</link>
+      <link>https://www.breakpointsec.de/docs/getting-started/installation/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fraunhofer-aisec.github.io/codyze/docs/getting-started/installation/</guid>
+      <guid>https://www.breakpointsec.de/docs/getting-started/installation/</guid>
       <description>
         
         
@@ -124,13 +124,13 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Go to &lt;em&gt;Windows-&amp;gt;Preferences-&amp;gt;Codyze Code Analysis&lt;/em&gt; and configure the path to the analysis server binary&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/eclipse-plugin-2.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/eclipse-plugin-2.png&#34; 
 alt=&#34;Configuring Eclipse Plugin&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;If the configuration is correct, &lt;code&gt;.java&lt;/code&gt; and &lt;code&gt;.cpp&lt;/code&gt; files will be automatically scanned when they are saved. Any errors found by Codyze will be highlighted as problems. If Codyze verifies that an API is correctly used, it will create mark the line with a hint.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://fraunhofer-aisec.github.io/codyze/img/eclipse-plugin-1.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/eclipse-plugin-1.png&#34; 
 alt=&#34;Configuring Eclipse Plugin&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;integration-in-intellij&#34;&gt;Integration in IntelliJ&lt;/h2&gt;
@@ -156,10 +156,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: Using CLI mode</title>
-      <link>https://fraunhofer-aisec.github.io/codyze/docs/getting-started/cli/</link>
+      <link>https://www.breakpointsec.de/docs/getting-started/cli/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fraunhofer-aisec.github.io/codyze/docs/getting-started/cli/</guid>
+      <guid>https://www.breakpointsec.de/docs/getting-started/cli/</guid>
       <description>
         
         
@@ -193,10 +193,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: MARK Entities</title>
-      <link>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/define-entities/</link>
+      <link>https://www.breakpointsec.de/docs/mark-authors/define-entities/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/define-entities/</guid>
+      <guid>https://www.breakpointsec.de/docs/mark-authors/define-entities/</guid>
       <description>
         
         
@@ -322,10 +322,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: MARK Rules</title>
-      <link>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/mark-authors/</link>
+      <link>https://www.breakpointsec.de/docs/mark-authors/mark-authors/</link>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fraunhofer-aisec.github.io/codyze/docs/mark-authors/mark-authors/</guid>
+      <guid>https://www.breakpointsec.de/docs/mark-authors/mark-authors/</guid>
       <description>
         
         
