@@ -106,5 +106,230 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
       </description>
     </item>
     
+    <item>
+      <title>Docs: Using the Codyze Console</title>
+      <link>https://www.breakpointsec.de/docs/getting-started/console/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.breakpointsec.de/docs/getting-started/console/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;starting-in-console-mode&#34;&gt;Starting in Console Mode&lt;/h2&gt;
+&lt;p&gt;When starting Codyze with the &lt;code&gt;-t&lt;/code&gt; option, it will start an interactive Python console that you can use to explore your source code projects.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;$&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;codyze&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;t&lt;/span&gt;
+
+      ██████╗ ██████╗ ██████╗ ██╗   ██╗███████╗███████╗
+     ██╔════╝██╔═══██╗██╔══██╗╚██╗ ██╔╝╚══███╔╝██╔════╝
+     ██║     ██║   ██║██║  ██║ ╚████╔╝   ███╔╝ █████╗  
+     ██║     ██║   ██║██║  ██║  ╚██╔╝   ███╔╝  ██╔══╝  
+     ╚██████╗╚██████╔╝██████╔╝   ██║   ███████╗███████╗
+      ╚═════╝ ╚═════╝ ╚═════╝    ╚═╝   ╚══════╝╚══════╝
+     
+                     &lt;span style=&#34;color:#000&#34;&gt;Welcome&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Codyze&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!&lt;/span&gt;
+                &lt;span style=&#34;color:#000&#34;&gt;To&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;enter&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;help()&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The console is a standard python console and offers a few extra commands to load, analyze, and explore source code with Codyze. It supports the following standard keyboard shortcuts:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Object&lt;/th&gt;
+&lt;th&gt;Shorthand&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; or &lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;D&lt;/kbd&gt;&lt;/td&gt;
+&lt;td&gt;Leaves the console&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;kbd&gt;UP&lt;/kbd&gt;, &lt;kbd&gt;DOWN&lt;/kbd&gt;&lt;/td&gt;
+&lt;td&gt;Navigate backand forth in command history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;R&lt;/kbd&gt;&lt;/td&gt;
+&lt;td&gt;Search in command history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;kbd&gt;ALT&lt;/kbd&gt;+&lt;kbd&gt;B&lt;/kbd&gt;&lt;/td&gt;
+&lt;td&gt;Go back one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;kbd&gt;ALT&lt;/kbd&gt;+&lt;kbd&gt;F&lt;/kbd&gt;&lt;/td&gt;
+&lt;td&gt;Go forth one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;To run any Python snippet, simply enter it at the command prompt:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;print&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;Hello world&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Hello&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;world&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To interact with Codyze, the console provides three main objects: &lt;code&gt;server&lt;/code&gt;, &lt;code&gt;query&lt;/code&gt; and &lt;code&gt;graph&lt;/code&gt;. Each object has a shorthand notation that is an alias to save a few keystrokes, so instead of &lt;code&gt;server&lt;/code&gt; you may simply type &lt;code&gt;s&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Object&lt;/th&gt;
+&lt;th&gt;Shorthand&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;server&lt;/td&gt;
+&lt;td&gt;s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;query&lt;/td&gt;
+&lt;td&gt;q&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;graph&lt;/td&gt;
+&lt;td&gt;g&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;server&#34;&gt;&lt;code&gt;server&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;server&lt;/code&gt; object controls the Codyze analysis server. Use it to load source code projects, MARK files, and start the analysis.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;s.analyze(path)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Starts the analysis for the given folder or source file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;s.show_findings()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;List all findings, including correct and incorrect uses of cryptography. Make sure to call &lt;code&gt;analyze&lt;/code&gt; before.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;s.list_rules()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;List all MARK rules which are currently active.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;s.load_rules(path)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Load additional MARK rules from the given folder or file. Make sure to load rules before calling &lt;code&gt;analyze&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;query&#34;&gt;&lt;code&gt;query&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;query&lt;/code&gt; object provides access to the Crymlin query interface. Crymlin is an extension of the Apache Gremlin graph traversal language and comes with various shortcuts for exploring code property graphs. To get a first impression of Crymlin, consider the following snippet:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;q&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;methods&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+     &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+     &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toList&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;myMethod&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;someOtherMethod&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This snippet uses the query object &lt;code&gt;q&lt;/code&gt; to get all methods (in all files and all classes) from the graph, retrieves their names (&lt;code&gt;name&lt;/code&gt;) and collect them in a list (&lt;code&gt;toList&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;In this example, &lt;code&gt;methods()&lt;/code&gt; and &lt;code&gt;name()&lt;/code&gt; are so-called &lt;em&gt;traversal steps&lt;/em&gt; and &lt;code&gt;toList()&lt;/code&gt; is a &lt;em&gt;terminator&lt;/em&gt;. Every graph traversal needs a terminator to produce meaningful output. Until the console encounters a terminator, it will treat the graph traversal as an iterator that can be modified by further traversal steps.&lt;/p&gt;
+&lt;h3 id=&#34;query-terminators&#34;&gt;Query terminators&lt;/h3&gt;
+&lt;p&gt;The most used terminators are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Terminator&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.next()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Returns the first element that matches the query or &lt;code&gt;NoSuchElementException&lt;/code&gt; if the query result is empty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.toList()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Collects all query results in a list and returns it. Not that for queries returning very large result sets, this terminator will consume more memory and CPU time.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.toSet()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Collects all query results in a set (removing duplicates) and returns it. Not that for queries returning very large result sets, this terminator will consume more memory and CPU time.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;traversal-sources&#34;&gt;Traversal Sources&lt;/h3&gt;
+&lt;p&gt;Every query must begin with a traversal &lt;em&gt;source&lt;/em&gt; which retrieves an initial iterator over nodes from the graph which can then be modified by further traversal steps. The most simple source is &lt;code&gt;V()&lt;/code&gt; which includes all nodes of the graph.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Traversal Source&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.V()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All nodes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.translationunits()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All &lt;code&gt;TranslationUnit&lt;/code&gt; nodes, i.e. all source code files&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.methods()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All &lt;code&gt;MethodDeclaration&lt;/code&gt; nodes, i.e. all class methods&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.functions()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All &lt;code&gt;FunctionDeclaration&lt;/code&gt; nodes, i.e. all class methods and functions&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.calls()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All &lt;code&gt;CallExpression&lt;/code&gt; nodes, i.e. all method and function calls&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.vars()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All &lt;code&gt;VariableDeclaration&lt;/code&gt; nodes, i.e. all program locations declaring a variable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.fields()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All &lt;code&gt;FieldDeclaration&lt;/code&gt; nodes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.ctor(String type)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;All constructors of the given fully qualified type&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;traversal-steps&#34;&gt;Traversal Steps&lt;/h3&gt;
+&lt;p&gt;Traversal sources and steps are the main operators of Crymlin queries. They determine which nodes and properties are retrieved from the graph. The Crymlin query language accepts all traversal steps supported by Apache Gremlin, plus the following steps which are specific to the exploration of the code property graph.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Traversal Step&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.label()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Label of CPG node. The node label is the type of the CPG node (e.g., &lt;code&gt;MethodDeclaration&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.name()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Name of the selected nodes as a string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.file()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Name of the source code file containing the current CPG node&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.code()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Source code of the selected nodes as a string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.comment()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Any inline comment of the current CPG node&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.body()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Body of a function or method as a node. If the body contains more than one statement, this will typically return a &lt;code&gt;CompoundStatement&lt;/code&gt; node&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
