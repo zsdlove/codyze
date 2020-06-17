@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codyze – Write MARK Policies</title>
-    <link>https://www.breakpointsec.de/docs/mark-authors/</link>
+    <link>https://www.codyze.io/docs/mark-authors/</link>
     <description>Recent content in Write MARK Policies on Codyze</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://www.breakpointsec.de/docs/mark-authors/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://www.codyze.io/docs/mark-authors/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Install MARK IDE</title>
-      <link>https://www.breakpointsec.de/docs/mark-authors/installation/</link>
+      <link>https://www.codyze.io/docs/mark-authors/installation/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/mark-authors/installation/</guid>
+      <guid>https://www.codyze.io/docs/mark-authors/installation/</guid>
       <description>
         
         
@@ -41,10 +41,10 @@
     
     <item>
       <title>Docs: MARK Entities</title>
-      <link>https://www.breakpointsec.de/docs/mark-authors/define-entities/</link>
+      <link>https://www.codyze.io/docs/mark-authors/define-entities/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/mark-authors/define-entities/</guid>
+      <guid>https://www.codyze.io/docs/mark-authors/define-entities/</guid>
       <description>
         
         
@@ -102,7 +102,7 @@
   }
 }
 &lt;/pre&gt;
-&lt;h2 id=&#34;optionally-blacklist-some-opss&#34;&gt;(Optionally) blacklist some _ops_s&lt;/h2&gt;
+&lt;h2 id=&#34;optionally-blacklist-some-_ops_s&#34;&gt;(Optionally) blacklist some _ops_s&lt;/h2&gt;
 &lt;p&gt;In some cases, groups of functions or methods should not be used at all by a program. This applies e.g. to deprecated functions or functions that are known to be insecure. MARK provides a shortcut to mark any use of such functions as insecure: the &lt;code&gt;forbidden&lt;/code&gt; keyword.&lt;/p&gt;
 &lt;pre&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;entity&lt;/span&gt; Crypto {
@@ -170,10 +170,10 @@
     
     <item>
       <title>Docs: MARK Rules</title>
-      <link>https://www.breakpointsec.de/docs/mark-authors/mark-authors/</link>
+      <link>https://www.codyze.io/docs/mark-authors/mark-authors/</link>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/mark-authors/mark-authors/</guid>
+      <guid>https://www.codyze.io/docs/mark-authors/mark-authors/</guid>
       <description>
         
         
@@ -220,27 +220,27 @@
   // todo
 }
 &lt;/pre&gt;
-&lt;h3 id=&#34;builtin-predicates&#34;&gt;Built-in Predicates&lt;/h3&gt;
+&lt;h3 id=&#34;built-in-predicates&#34;&gt;Built-in Predicates&lt;/h3&gt;
 &lt;p&gt;MARK comes with a number of built in functions that can be used as predicates in conditions and preconditions. These built-ins are called when MARK rules are evaluated and operate over their input arguments (typically MARK objects or constants) and the current evaluation context. By convention, built-ins should start with an underscore (&lt;code&gt;_&lt;/code&gt;). When a built-in fails, it will return an &lt;code&gt;Error&lt;/code&gt; object that always evaluates to &lt;em&gt;not applicable&lt;/em&gt;, i.e. neither true nor false.&lt;/p&gt;
-&lt;h4 id=&#34;hasvalue&#34;&gt;_has_value&lt;/h4&gt;
+&lt;h4 id=&#34;_has_value&#34;&gt;_has_value&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;__has_value(a,b)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  ensure
      __has_value(a, b)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK object &lt;code&gt;a&lt;/code&gt; may be assigned value &lt;code&gt;b&lt;/code&gt; (e.g., a constant).&lt;/p&gt;
-&lt;h4 id=&#34;insidesamefunction&#34;&gt;_inside_same_function&lt;/h4&gt;
+&lt;h4 id=&#34;_inside_same_function&#34;&gt;_inside_same_function&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;__inside_same_function(a,b)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  ensure
      __inside_same_function(a, b)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK objects &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; reside in the same function.&lt;/p&gt;
-&lt;h4 id=&#34;is&#34;&gt;_is&lt;/h4&gt;
+&lt;h4 id=&#34;_is&#34;&gt;_is&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;_is(a,b)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  ensure
      _is(a, b)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK object &lt;code&gt;a&lt;/code&gt; is equal to variable &lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
-&lt;h4 id=&#34;split&#34;&gt;_split&lt;/h4&gt;
+&lt;h4 id=&#34;_split&#34;&gt;_split&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;_split(String str, String splitter, int position)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  TODO&lt;/p&gt;
 &lt;p&gt;Behaves like the Java expression &lt;code&gt;String.split(String splitter)[position]&lt;/code&gt;. That is, it splits the string &lt;code&gt;str&lt;/code&gt; at all occurrences of &lt;code&gt;splitter&lt;/code&gt; and returns the &lt;code&gt;position&lt;/code&gt;th substring. Returns an &lt;code&gt;Error&lt;/code&gt; if no such occurrence is found.&lt;/p&gt;

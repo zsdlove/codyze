@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codyze – Documentation</title>
-    <link>https://www.breakpointsec.de/docs/</link>
+    <link>https://www.codyze.io/docs/</link>
     <description>Recent content in Documentation on Codyze</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://www.breakpointsec.de/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://www.codyze.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Install MARK IDE</title>
-      <link>https://www.breakpointsec.de/docs/mark-authors/installation/</link>
+      <link>https://www.codyze.io/docs/mark-authors/installation/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/mark-authors/installation/</guid>
+      <guid>https://www.codyze.io/docs/mark-authors/installation/</guid>
       <description>
         
         
@@ -41,10 +41,10 @@
     
     <item>
       <title>Docs: Build the project</title>
-      <link>https://www.breakpointsec.de/docs/contributors/code/</link>
+      <link>https://www.codyze.io/docs/contributors/code/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/contributors/code/</guid>
+      <guid>https://www.codyze.io/docs/contributors/code/</guid>
       <description>
         
         
@@ -67,10 +67,10 @@ The purpose of these gradle tasks is as follows:
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;When everything works, &lt;code&gt;git commit&lt;/code&gt; your changes and &lt;code&gt;git push&lt;/code&gt; them to Github, then create a pull request (PR). Make sure to describe want you intend the code to do and refer to any issues your PR might address (using the notation &lt;code&gt;#123&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;If you&#39;re not yet ready for a review, add &amp;ldquo;WIP&amp;rdquo; to the PR name to indicate it&#39;s a work in progress.&lt;/li&gt;
+&lt;li&gt;If you&amp;rsquo;re not yet ready for a review, add &amp;ldquo;WIP&amp;rdquo; to the PR name to indicate it&amp;rsquo;s a work in progress.&lt;/li&gt;
 &lt;li&gt;Wait for the automated CI workflow to do some checks.&lt;/li&gt;
 &lt;li&gt;Continue working on your PR by pushing further commits to your branch until you are satisfied&lt;/li&gt;
-&lt;li&gt;When you&#39;re ready for a review, add a comment to the PR, and remove any &amp;ldquo;WIP&amp;rdquo; markers.&lt;/li&gt;
+&lt;li&gt;When you&amp;rsquo;re ready for a review, add a comment to the PR, and remove any &amp;ldquo;WIP&amp;rdquo; markers.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;code-formatting&#34;&gt;Code formatting&lt;/h2&gt;
 &lt;p&gt;Codyze uses the gradle &lt;em&gt;spotless&lt;/em&gt; plugin to format source code. You may import the code style definitions into your favorite IDE to apply it immediately.&lt;/p&gt;
@@ -81,17 +81,17 @@ The purpose of these gradle tasks is as follows:
 &lt;h3 id=&#34;intellij&#34;&gt;IntelliJ&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;In IntelliJ, open &lt;em&gt;Settings-&amp;gt;Editor-&amp;gt;Code Style-&amp;gt;Java&lt;/em&gt; and click on the cog icon.&lt;/li&gt;
-&lt;li&gt;Choose &lt;em&gt;Import Scheme-&amp;gt;Eclipse XML Profile&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
+&lt;li&gt;Choose &lt;em&gt;Import Scheme-&amp;gt;Eclipse XML Profile&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&amp;rsquo;s root folder.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/intellij-formatter.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/intellij-formatter.png&#34; 
 alt=&#34;Import code style formatter into IntelliJ&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;eclipse&#34;&gt;Eclipse&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;In Eclipse, open &lt;em&gt;Window-&amp;gt;Preferences-&amp;gt;Java-&amp;gt;Code Style-&amp;gt;Formatter&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Click &lt;em&gt;Import&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&#39;s root folder.&lt;/li&gt;
+&lt;li&gt;Click &lt;em&gt;Import&lt;/em&gt; and select the file &lt;code&gt;formatter-settings.xml&lt;/code&gt; in the project&amp;rsquo;s root folder.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/eclipse-formatter.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/eclipse-formatter.png&#34; 
 alt=&#34;Import code style formatter into Eclipse&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 
@@ -100,10 +100,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: Install Codyze</title>
-      <link>https://www.breakpointsec.de/docs/getting-started/installation/</link>
+      <link>https://www.codyze.io/docs/getting-started/installation/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/getting-started/installation/</guid>
+      <guid>https://www.codyze.io/docs/getting-started/installation/</guid>
       <description>
         
         
@@ -120,17 +120,17 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;li&gt;Run &lt;code&gt;server.bat -l&lt;/code&gt; (Windows) or &lt;code&gt;server.sh -l&lt;/code&gt; (Mac, Linux) from the unzipped folder to start the analysis server in LSP mode&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;integration-in-eclipse&#34;&gt;Integration in Eclipse&lt;/h2&gt;
-&lt;p&gt;Codyze can be installed from the following Eclipse update site: &lt;a href=&#34;https://update.breakpoint-security.com&#34;&gt;&lt;a href=&#34;https://update.breakpoint-security.com&#34;&gt;https://update.breakpoint-security.com&lt;/a&gt;&lt;/a&gt;. It has been tested against Eclipse 2019-04 and later.&lt;/p&gt;
+&lt;p&gt;Codyze can be installed from the following Eclipse update site: &lt;a href=&#34;https://update.breakpoint-security.com&#34;&gt;https://update.breakpoint-security.com&lt;/a&gt;. It has been tested against Eclipse 2019-04 and later.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Go to &lt;em&gt;Windows-&amp;gt;Preferences-&amp;gt;Codyze Code Analysis&lt;/em&gt; and configure the path to the analysis server binary&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/eclipse-plugin-2.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/eclipse-plugin-2.png&#34; 
 alt=&#34;Configuring Eclipse Plugin&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;If the configuration is correct, &lt;code&gt;.java&lt;/code&gt; and &lt;code&gt;.cpp&lt;/code&gt; files will be automatically scanned when they are saved. Any errors found by Codyze will be highlighted as problems. If Codyze verifies that an API is correctly used, it will create mark the line with a hint.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.breakpointsec.de/img/eclipse-plugin-1.png&#34; 
+&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/eclipse-plugin-1.png&#34; 
 alt=&#34;Configuring Eclipse Plugin&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;integration-in-intellij&#34;&gt;Integration in IntelliJ&lt;/h2&gt;
@@ -156,35 +156,35 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: Using CLI mode</title>
-      <link>https://www.breakpointsec.de/docs/getting-started/cli/</link>
+      <link>https://www.codyze.io/docs/getting-started/cli/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/getting-started/cli/</guid>
+      <guid>https://www.codyze.io/docs/getting-started/cli/</guid>
       <description>
         
         
         &lt;h2 id=&#34;command-line-mode&#34;&gt;Command line mode&lt;/h2&gt;
 &lt;p&gt;When running in command line interface (CLI) mode, Codyze can be used to automatically check a code base against a set of MARK rules. Run &lt;code&gt;codyze&lt;/code&gt; to see the supported command line flags:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Usage&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;codyze &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;l&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;typestate&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;NFA&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WPDS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;interproc&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;hV&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;file&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt;
-              &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timeout&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;minutes&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Usage&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;codyze &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;l&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;typestate&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;NFA&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WPDS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;interproc]]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;hV]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;file&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt;
+              &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timeout&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;minutes&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;]&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;Codyze&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;finds&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;security&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;flaws&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;source&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;code&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;       &lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;folder&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;analyze.&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;mark&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;         &lt;span style=&#34;color:#000&#34;&gt;Load&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MARK&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;policy&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;files&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;folder&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;output&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;file&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;       &lt;span style=&#34;color:#000&#34;&gt;Write&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;results&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;file.&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Use&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;stdout.&lt;/span&gt;
-      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timeout&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;minutes&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;   &lt;span style=&#34;color:#000&#34;&gt;Terminate&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;analysis&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;after&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;timeout&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;       &lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;folder&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;analyze.&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;mark&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;         &lt;span style=&#34;color:#000&#34;&gt;Load&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MARK&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;policy&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;files&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;folder&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;output&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;file&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;       &lt;span style=&#34;color:#000&#34;&gt;Write&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;results&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;file.&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Use&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;stdout.&lt;/span&gt;
+      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timeout&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;minutes&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;   &lt;span style=&#34;color:#000&#34;&gt;Terminate&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;analysis&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;after&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;timeout&lt;/span&gt;
                               &lt;span style=&#34;color:#000&#34;&gt;Default&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;120&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt;                &lt;span style=&#34;color:#000&#34;&gt;Show&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;exit.&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;V&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;version&lt;/span&gt;             &lt;span style=&#34;color:#000&#34;&gt;Print&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;information&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;exit.&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt;                &lt;span style=&#34;color:#000&#34;&gt;Show&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;exit.&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;V&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;version&lt;/span&gt;             &lt;span style=&#34;color:#000&#34;&gt;Print&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;information&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;exit.&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;Execution&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;mode&lt;/span&gt;
   &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;c&lt;/span&gt;                        &lt;span style=&#34;color:#000&#34;&gt;Start&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;command&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;line&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;mode.&lt;/span&gt;
   &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;l&lt;/span&gt;                        &lt;span style=&#34;color:#000&#34;&gt;Start&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;language&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;server&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;protocol &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LSP&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;mode.&lt;/span&gt;
   &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;t&lt;/span&gt;                        &lt;span style=&#34;color:#000&#34;&gt;Start&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;interactive&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;console &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Text&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;based&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;User&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Interface&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;.
 &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Analysis&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;settings&lt;/span&gt;
-      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;typestate&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;NFA&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WPDS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;typestate&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;NFA&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WPDS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
                             &lt;span style=&#34;color:#000&#34;&gt;Typestate&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;analysis&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;mode&lt;/span&gt;
                             &lt;span style=&#34;color:#000&#34;&gt;NFA&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;Non&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;deterministic&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;finite&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;automaton &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;faster&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intraprocedural&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
                             &lt;span style=&#34;color:#000&#34;&gt;WPDS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Weighted&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;pushdown&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;system &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;slower&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;interprocedural&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;interproc&lt;/span&gt;           &lt;span style=&#34;color:#000&#34;&gt;Enables&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;interprocedural&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;flow&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;analysis &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;more&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;precise&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;but&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;slower&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;.
+      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;interproc&lt;/span&gt;           &lt;span style=&#34;color:#000&#34;&gt;Enables&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;interprocedural&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;flow&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;analysis &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;more&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;precise&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;but&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;slower&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;.
 &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;-c&lt;/code&gt; enters command line mode. It will parse all files given by the &lt;code&gt;-s&lt;/code&gt; argument, analyze them against the MARK policies given by &lt;code&gt;-m&lt;/code&gt;, and write the findings in JSON format to the file given by &lt;code&gt;-o&lt;/code&gt;. If &lt;code&gt;--&lt;/code&gt; is given as the output name, the results will be dumped to stdout.&lt;/p&gt;
 
@@ -193,10 +193,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: MARK Entities</title>
-      <link>https://www.breakpointsec.de/docs/mark-authors/define-entities/</link>
+      <link>https://www.codyze.io/docs/mark-authors/define-entities/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/mark-authors/define-entities/</guid>
+      <guid>https://www.codyze.io/docs/mark-authors/define-entities/</guid>
       <description>
         
         
@@ -254,7 +254,7 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
   }
 }
 &lt;/pre&gt;
-&lt;h2 id=&#34;optionally-blacklist-some-opss&#34;&gt;(Optionally) blacklist some _ops_s&lt;/h2&gt;
+&lt;h2 id=&#34;optionally-blacklist-some-_ops_s&#34;&gt;(Optionally) blacklist some _ops_s&lt;/h2&gt;
 &lt;p&gt;In some cases, groups of functions or methods should not be used at all by a program. This applies e.g. to deprecated functions or functions that are known to be insecure. MARK provides a shortcut to mark any use of such functions as insecure: the &lt;code&gt;forbidden&lt;/code&gt; keyword.&lt;/p&gt;
 &lt;pre&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;entity&lt;/span&gt; Crypto {
@@ -322,10 +322,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: Using the Codyze Console</title>
-      <link>https://www.breakpointsec.de/docs/getting-started/console/</link>
+      <link>https://www.codyze.io/docs/getting-started/console/</link>
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/getting-started/console/</guid>
+      <guid>https://www.codyze.io/docs/getting-started/console/</guid>
       <description>
         
         
@@ -341,9 +341,9 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
       ╚═════╝ ╚═════╝ ╚═════╝    ╚═╝   ╚══════╝╚══════╝
      
                      &lt;span style=&#34;color:#000&#34;&gt;Welcome&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Codyze&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!&lt;/span&gt;
-                &lt;span style=&#34;color:#000&#34;&gt;To&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;enter&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;help()&amp;#34;&lt;/span&gt;
+                &lt;span style=&#34;color:#000&#34;&gt;To&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;enter&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;help()&amp;#34;&lt;/span&gt;
 
-&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The console is a standard python console and offers a few extra commands to load, analyze, and explore source code with Codyze. It supports the following standard keyboard shortcuts:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -376,7 +376,7 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;To run any Python snippet, simply enter it at the command prompt:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;print&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;Hello world&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;print&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Hello world&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;Hello&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;world&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To interact with Codyze, the console provides three main objects: &lt;code&gt;server&lt;/code&gt;, &lt;code&gt;query&lt;/code&gt; and &lt;code&gt;graph&lt;/code&gt;. Each object has a shorthand notation that is an alias to save a few keystrokes, so instead of &lt;code&gt;server&lt;/code&gt; you may simply type &lt;code&gt;s&lt;/code&gt;.&lt;/p&gt;
 &lt;table&gt;
@@ -431,9 +431,9 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;query&#34;&gt;&lt;code&gt;query&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;query&lt;/code&gt; object provides access to the Crymlin query interface. Crymlin is an extension of the Apache Gremlin graph traversal language and comes with various shortcuts for exploring code property graphs. To get a first impression of Crymlin, consider the following snippet:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;q&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;methods&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-     &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-     &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toList&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;q&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;methods&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+     &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+     &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toList&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;myMethod&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;someOtherMethod&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This snippet uses the query object &lt;code&gt;q&lt;/code&gt; to get all methods (in all files and all classes) from the graph, retrieves their names (&lt;code&gt;name&lt;/code&gt;) and collect them in a list (&lt;code&gt;toList&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;In this example, &lt;code&gt;methods()&lt;/code&gt; and &lt;code&gt;name()&lt;/code&gt; are so-called &lt;em&gt;traversal steps&lt;/em&gt; and &lt;code&gt;toList()&lt;/code&gt; is a &lt;em&gt;terminator&lt;/em&gt;. Every graph traversal needs a terminator to produce meaningful output. Until the console encounters a terminator, it will treat the graph traversal as an iterator that can be modified by further traversal steps.&lt;/p&gt;
@@ -547,10 +547,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: MARK Rules</title>
-      <link>https://www.breakpointsec.de/docs/mark-authors/mark-authors/</link>
+      <link>https://www.codyze.io/docs/mark-authors/mark-authors/</link>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.breakpointsec.de/docs/mark-authors/mark-authors/</guid>
+      <guid>https://www.codyze.io/docs/mark-authors/mark-authors/</guid>
       <description>
         
         
@@ -597,27 +597,27 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
   // todo
 }
 &lt;/pre&gt;
-&lt;h3 id=&#34;builtin-predicates&#34;&gt;Built-in Predicates&lt;/h3&gt;
+&lt;h3 id=&#34;built-in-predicates&#34;&gt;Built-in Predicates&lt;/h3&gt;
 &lt;p&gt;MARK comes with a number of built in functions that can be used as predicates in conditions and preconditions. These built-ins are called when MARK rules are evaluated and operate over their input arguments (typically MARK objects or constants) and the current evaluation context. By convention, built-ins should start with an underscore (&lt;code&gt;_&lt;/code&gt;). When a built-in fails, it will return an &lt;code&gt;Error&lt;/code&gt; object that always evaluates to &lt;em&gt;not applicable&lt;/em&gt;, i.e. neither true nor false.&lt;/p&gt;
-&lt;h4 id=&#34;hasvalue&#34;&gt;_has_value&lt;/h4&gt;
+&lt;h4 id=&#34;_has_value&#34;&gt;_has_value&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;__has_value(a,b)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  ensure
      __has_value(a, b)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK object &lt;code&gt;a&lt;/code&gt; may be assigned value &lt;code&gt;b&lt;/code&gt; (e.g., a constant).&lt;/p&gt;
-&lt;h4 id=&#34;insidesamefunction&#34;&gt;_inside_same_function&lt;/h4&gt;
+&lt;h4 id=&#34;_inside_same_function&#34;&gt;_inside_same_function&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;__inside_same_function(a,b)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  ensure
      __inside_same_function(a, b)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK objects &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; reside in the same function.&lt;/p&gt;
-&lt;h4 id=&#34;is&#34;&gt;_is&lt;/h4&gt;
+&lt;h4 id=&#34;_is&#34;&gt;_is&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;_is(a,b)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  ensure
      _is(a, b)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if MARK object &lt;code&gt;a&lt;/code&gt; is equal to variable &lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
-&lt;h4 id=&#34;split&#34;&gt;_split&lt;/h4&gt;
+&lt;h4 id=&#34;_split&#34;&gt;_split&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; &lt;code&gt;_split(String str, String splitter, int position)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  TODO&lt;/p&gt;
 &lt;p&gt;Behaves like the Java expression &lt;code&gt;String.split(String splitter)[position]&lt;/code&gt;. That is, it splits the string &lt;code&gt;str&lt;/code&gt; at all occurrences of &lt;code&gt;splitter&lt;/code&gt; and returns the &lt;code&gt;position&lt;/code&gt;th substring. Returns an &lt;code&gt;Error&lt;/code&gt; if no such occurrence is found.&lt;/p&gt;
