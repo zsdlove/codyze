@@ -7,6 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
+<link rel="alternate" type="application/rss&#43;xml" href="https://www.codyze.io/docs/crymlin-query/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -20,25 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Install MARK IDE | Codyze</title><meta property="og:title" content="Install MARK IDE" />
-<meta property="og:description" content="Setting up the MARK authoring environment with Eclipse XText
+<title>Crymlin Query Language | Codyze</title><meta property="og:title" content="Crymlin Query Language" />
+<meta property="og:description" content="Crymlin is a query language to explore code property graphs
 " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.codyze.io/docs/mark-authors/installation/" />
-<meta property="article:published_time" content="2020-03-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-24T13:22:37+01:00" /><meta property="og:site_name" content="Codyze" />
-<meta itemprop="name" content="Install MARK IDE">
-<meta itemprop="description" content="Setting up the MARK authoring environment with Eclipse XText
-">
-<meta itemprop="datePublished" content="2020-03-10T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-03-24T13:22:37&#43;01:00" />
-<meta itemprop="wordCount" content="143">
-
-
-
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Install MARK IDE"/>
-<meta name="twitter:description" content="Setting up the MARK authoring environment with Eclipse XText
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.codyze.io/docs/crymlin-query/" />
+<meta property="og:site_name" content="Codyze" />
+<meta itemprop="name" content="Crymlin Query Language">
+<meta itemprop="description" content="Crymlin is a query language to explore code property graphs
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Crymlin Query Language"/>
+<meta name="twitter:description" content="Crymlin is a query language to explore code property graphs
 "/>
 
 
@@ -60,9 +53,9 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Install MARK IDE | Codyze</title>
+    <title>Crymlin Query Language | Codyze</title>
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -232,10 +225,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/crymlin-query/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Crymlin Query Language</a>
+    <a  href="/docs/crymlin-query/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Crymlin Query Language</a>
   </li>
   <ul>
-    <li class="collapse " id="docscrymlin-query">
+    <li class="collapse show" id="docscrymlin-query">
       
       
       
@@ -255,17 +248,17 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/mark-authors/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Write MARK Policies</a>
+    <a  href="/docs/mark-authors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Write MARK Policies</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsmark-authors">
+    <li class="collapse " id="docsmark-authors">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsmark-authorsinstallation" href="/docs/mark-authors/installation/">Install MARK IDE</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmark-authorsinstallation" href="/docs/mark-authors/installation/">Install MARK IDE</a>
       
       
       
@@ -340,8 +333,13 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#install-the-mark-eclipse-plugin">Install the MARK Eclipse Plugin</a></li>
-    <li><a href="#start-writing-mark-policies">Start writing MARK policies</a></li>
+    <li>
+      <ul>
+        <li><a href="#query-terminators">Query terminators</a></li>
+        <li><a href="#traversal-sources">Traversal Sources</a></li>
+        <li><a href="#traversal-steps">Traversal Steps</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -359,9 +357,6 @@
 
 
 
-
-
-
 <li class="breadcrumb-item" >
 	<a href="https://www.codyze.io/docs/">Documentation</a>
 </li>
@@ -369,15 +364,8 @@
 
 
 
-<li class="breadcrumb-item" >
-	<a href="https://www.codyze.io/docs/mark-authors/">Write MARK Policies</a>
-</li>
-
-
-
-
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://www.codyze.io/docs/mark-authors/installation/">Install MARK IDE</a>
+	<a href="https://www.codyze.io/docs/crymlin-query/">Crymlin Query Language</a>
 </li>
 
 	</ol>
@@ -385,28 +373,221 @@
 
             
 <div class="td-content">
-	<h1>Install MARK IDE</h1>
-	<div class="lead">Setting up the MARK authoring environment with Eclipse XText</div>
-	<p>MARK is a simple domain specific language (DSL) that can be written in any text editor. We recommend however using the MARK Eclipse plugin which brings syntax highlighting, auto-completion, and some other benefits that will support you in writing MARK rules.</p>
-<h2 id="install-the-mark-eclipse-plugin">Install the MARK Eclipse Plugin</h2>
-<ul>
-<li>In Eclipse, click on <code>Help</code>-&gt;<code>Install new software</code></li>
-<li>Add the update site: <code>https://update.breakpoint-security.de</code></li>
-<li>Install (TODO: Name of product in eclipse update site)</li>
-</ul>
-<h2 id="start-writing-mark-policies">Start writing MARK policies</h2>
-<ul>
-<li>Create a new project by clicking on <code>New</code>-&gt;<code>Project</code>. The project type does not matter.</li>
-<li>Create a new file with the extension <code>.mark</code></li>
-<li>Start writing entities and rules. You may include all entities and rules in a single MARK file or organize them in multiple files as you with. As long as all MARK files are located in the same folder, Codyze will load entities and rules from all files in that folder.</li>
-</ul>
+	<h1>Crymlin Query Language</h1>
+	<div class="lead">Crymlin is a query language to explore code property graphs</div>
+	<p>Crymlin is an extension of the graph traversal language <a href="https://tinkerpop.apache.org/gremlin.html">Apache Gremlin</a> that comes with additional expressions for exploring code property graphs.</p>
+<p>A graph traversal is an iterator over elements of the graph (nodes, edges, labels, properties) that always starts with a <em>traversal source</em>, then continues with any number of <em>traversal steps</em> and ends with a single <em>terminator step</em>. To understand these concepts, let&rsquo;s consider a simple example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ce5c00;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#000">q</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">methods</span><span style="color:#000;font-weight:bold">()</span>
+     <span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">()</span>
+     <span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">toList</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000;font-weight:bold">[</span><span style="color:#000">main</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">toString</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">myMethod</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">someOtherMethod</span><span style="color:#000;font-weight:bold">]</span>
+</code></pre></div><p>In this example, <code>methods()</code> is a <em>traversal source</em> that starts iterating the graph at all nodes representing a method. <code>name()</code> is a <em>traversal step</em> that retrieves the <code>name</code> property of these nodes and <code>toList()</code> is a <em>terminator</em> that collects all names in a list. Every graph traversal needs a terminator to produce meaningful output. Until the console encounters a terminator, it will treat the graph traversal as an iterator that can be modified by further traversal steps.</p>
+<h3 id="query-terminators">Query terminators</h3>
+<p>The most used terminators are:</p>
+<table>
+<thead>
+<tr>
+<th>Terminator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.next()</code></td>
+<td>Returns the first element that matches the query or <code>NoSuchElementException</code> if the query result is empty.</td>
+</tr>
+<tr>
+<td><code>.tryNext()</code></td>
+<td>Returns the first element that matches the query or an empty <code>Optional</code> if the query result is empty.</td>
+</tr>
+<tr>
+<td><code>.toList()</code></td>
+<td>Collects all query results in a list and returns it. Not that for queries returning very large result sets, this terminator will consume more memory and CPU time.</td>
+</tr>
+<tr>
+<td><code>.toSet()</code></td>
+<td>Collects all query results in a set (removing duplicates) and returns it. Note that for queries returning very large result sets, this terminator will consume more memory and CPU time.</td>
+</tr>
+<tr>
+<td><code>.count()</code></td>
+<td>Returns the number of elements matches by the query.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traversal-sources">Traversal Sources</h3>
+<p>Every query must begin with a traversal <em>source</em> which retrieves an initial iterator over nodes from the graph which can then be modified by further traversal steps. The most simple source is <code>V()</code> which includes all nodes of the graph.</p>
+<table>
+<thead>
+<tr>
+<th>Traversal Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.byID(int id)</code></td>
+<td>Node with the give id. The id of a node can be retrieved by the <code>.id()</code> step.</td>
+</tr>
+<tr>
+<td><code>.calls()</code></td>
+<td>Calls to methods or functions (<code>CallExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.calls(String calleeName)</code></td>
+<td>Calls to methods or functions matching this name (<code>CallExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.ctor(String type)</code></td>
+<td>Constructors of the given fully qualified type (<code>ConstructExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.declarations()</code></td>
+<td>All declarations (of fields, variables, records, etc. (any of <code>FieldDeclaration</code>, <code>VariableDeclaration</code>, <code>RecordDeclaration</code>, etc.)</td>
+</tr>
+<tr>
+<td><code>.fields()</code></td>
+<td>Declarations of fields (<code>FieldDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.field(String fieldName)</code></td>
+<td>Declarations of fields with the given name (<code>FieldDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.functions()</code></td>
+<td>Class methods and functions (<code>FunctionDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.methods()</code></td>
+<td>Class methods (<code>MethodDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.records()</code></td>
+<td>Records are classes, enums, structs (<code>RecordDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.records(String name)</code></td>
+<td>Records such as classes, enums, structs that match the given name (<code>RecordDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.translationunits()</code></td>
+<td>File names of matching source code (<code>TranslationUnit</code>)</td>
+</tr>
+<tr>
+<td><code>.vars()</code></td>
+<td>Declarations of variables (<code>VariableDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.V()</code></td>
+<td>All nodes in the graph</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traversal-steps">Traversal Steps</h3>
+<p>Traversal sources and steps are the main operators of Crymlin queries. They determine which nodes and properties are retrieved from the graph. The Crymlin query language accepts all traversal steps supported by Apache Gremlin, plus the following steps which are specific to the exploration of the code property graph.</p>
+<table>
+<thead>
+<tr>
+<th>Traversal Step    </th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="white-space: nowrap;"><code>.argument(int n)</code></span></td>
+<td>Returns the the n-th argument of a function or method call (<code>ArgumentExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.body()</code></td>
+<td>Body of a function or method as a node. If the body contains more than one statement, this will typically return a <code>CompoundStatement</code> node</td>
+</tr>
+<tr>
+<td><code>.code()</code></td>
+<td>Source code of the selected nodes as a string</td>
+</tr>
+<tr>
+<td><code>.comment()</code></td>
+<td>Any inline comment of the current CPG node</td>
+</tr>
+<tr>
+<td><code>.file()</code></td>
+<td>Name of the source code file containing the current CPG node</td>
+</tr>
+<tr>
+<td><code>.label()</code></td>
+<td>Label of CPG node. The node label is the type of the CPG node (e.g., <code>MethodDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.name()</code></td>
+<td>Name of the selected nodes as a string</td>
+</tr>
+<tr>
+<td><code>.nextCfg()</code></td>
+<td>Returns the next node(s) along the control flow graph (CFG)</td>
+</tr>
+<tr>
+<td><code>.prevCfg()</code></td>
+<td>Returns the next node(s) along the control flow graph (CFG)</td>
+</tr>
+<tr>
+<td><code>.nextEog()</code></td>
+<td>Next node(s) along the Evaluation Order Graph (EOG)</td>
+</tr>
+<tr>
+<td><code>.prevEog()</code></td>
+<td>Previous node(s) along the Evaluation Order Graph (EOG)</td>
+</tr>
+<tr>
+<td><code>.nextDfg()</code></td>
+<td>Next node(s) along the Evaluation Order Graph (EOG)</td>
+</tr>
+<tr>
+<td><code>.prevDfg()</code></td>
+<td>Previous node(s) along the Evaluation Order Graph (EOG)</td>
+</tr>
+</tbody>
+</table>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified March 24, 2020: <a  href="/commit/3e6c411fb7f750f6e46d9a8496558cabc3c43275">doc&#43;&#43; (3e6c411)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 18, 2020: <a  href="/commit/78e10021d9cf4730754295d3c586193d992b87bd">doc: Crymlin&#43;&#43; (78e1002)</a>
 </div>
 </div>
-
 
           </main>
         </div>
