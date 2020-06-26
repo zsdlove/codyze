@@ -26,7 +26,7 @@
 &lt;h2 id=&#34;install-the-mark-eclipse-plugin&#34;&gt;Install the MARK Eclipse Plugin&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;In Eclipse, click on &lt;code&gt;Help&lt;/code&gt;-&amp;gt;&lt;code&gt;Install new software&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Add the update site: &lt;code&gt;https://update.breakpoint-security.de&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the update site: &lt;code&gt;https://update.breakpoint-security.com&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Install (TODO: Name of product in eclipse update site)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;start-writing-mark-policies&#34;&gt;Start writing MARK policies&lt;/h2&gt;
