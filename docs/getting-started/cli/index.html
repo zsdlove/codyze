@@ -26,13 +26,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.codyze.io/docs/getting-started/cli/" />
 <meta property="article:published_time" content="2020-01-30T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-25T16:47:41+02:00" /><meta property="og:site_name" content="Codyze" />
+<meta property="article:modified_time" content="2020-07-06T15:08:46+02:00" /><meta property="og:site_name" content="Codyze" />
 <meta itemprop="name" content="Using CLI mode">
 <meta itemprop="description" content="In CLI mode, Codyze integrates into scripts and automated build processes.
 ">
 <meta itemprop="datePublished" content="2020-01-30T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-05-25T16:47:41&#43;02:00" />
-<meta itemprop="wordCount" content="208">
+<meta itemprop="dateModified" content="2020-07-06T15:08:46&#43;02:00" />
+<meta itemprop="wordCount" content="235">
 
 
 
@@ -106,7 +106,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.61f85bef07455878f0accfec93dd3cd1375f5e7e6464b6c0e69fed1de8be9e17f7491eec5692aa29c184b019d84fbd84d089823e9ad042f53e54dbe9bdc7072b.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.83f7afe3fd783a43e211d756672b571bf840add06d6fc29fe09dbb60acc55037d06338f8a8f58abb8352b396ae02a02e390fdfb0dbcf558b568e9663d15092e7.json"
 >
 </div>
 </nav>
@@ -133,7 +133,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.61f85bef07455878f0accfec93dd3cd1375f5e7e6464b6c0e69fed1de8be9e17f7491eec5692aa29c184b019d84fbd84d089823e9ad042f53e54dbe9bdc7072b.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.83f7afe3fd783a43e211d756672b571bf840add06d6fc29fe09dbb60acc55037d06338f8a8f58abb8352b396ae02a02e390fdfb0dbcf558b568e9663d15092e7.json"
 >
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -404,10 +404,11 @@
       <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">interproc</span>           <span style="color:#000">Enables</span> <span style="color:#000">interprocedural</span> <span style="color:#000">data</span> <span style="color:#000">flow</span> <span style="color:#000">analysis </span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">more</span> <span style="color:#000">precise</span> <span style="color:#000">but</span> <span style="color:#000">slower</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">.
 </span><span style="color:#000"></span>
 </code></pre></div><p><code>-c</code> enters command line mode. It will parse all files given by the <code>-s</code> argument, analyze them against the MARK policies given by <code>-m</code>, and write the findings in JSON format to the file given by <code>-o</code>. If <code>--</code> is given as the output name, the results will be dumped to stdout.</p>
+<p>Note that line numbers of findings in JSON output start by 0 and are thus off by one compared to the <code>server.show_findings()</code> command in the interactive console.</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 25, 2020: <a  href="/commit/29b0af73e5d4d48b4bdbee97081880bded0f58b2">Doc: Apply no_list to remove lists of subpages (29b0af7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 6, 2020: <a  href="/commit/0ec7718f0c8345db16ec2752926e49cb0eba5ec6">Doc: Remark on (intended) line numbers off by one (0ec7718)</a>
 </div>
 </div>
 
