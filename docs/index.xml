@@ -145,7 +145,7 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If everything works as intended, you should see a green circle in your IntelliJ status bar, indicating that the connection to the language server was successful.&lt;/p&gt;
 &lt;h2 id=&#34;integration-in-visual-studio-2019&#34;&gt;Integration in Visual Studio 2019&lt;/h2&gt;
 &lt;p&gt;The Codyze eclipse can be installed from the Visual Studio 2019 Marketplace&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/vs-plugin.png&#34; 
+&lt;p&gt;&lt;img src=&#34;img/vs-plugin.jpg&#34; 
 alt=&#34;Installation from Visual Studio Market&#34; 
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If you prefer installing the plugin from the release page, proceed as follows:&lt;/p&gt;
