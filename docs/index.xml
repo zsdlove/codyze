@@ -117,7 +117,7 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the zipped analysis server from the &lt;a href=&#34;https://github.com/Fraunhofer-AISEC/codyze/releases&#34;&gt;release page&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Unzip the file&lt;/li&gt;
-&lt;li&gt;Run &lt;code&gt;server.bat -l&lt;/code&gt; (Windows) or &lt;code&gt;server.sh -l&lt;/code&gt; (Mac, Linux) from the unzipped folder to start the analysis server in LSP mode&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;bin\codyze.bat -l&lt;/code&gt; (Windows) or &lt;code&gt;bin/codyze -l&lt;/code&gt; (Mac, Linux) from the unzipped folder to start the analysis server in LSP mode&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;integration-in-eclipse&#34;&gt;Integration in Eclipse&lt;/h2&gt;
 &lt;p&gt;Codyze can be installed from the following Eclipse update site: &lt;a href=&#34;https://update.breakpoint-security.com&#34;&gt;https://update.breakpoint-security.com&lt;/a&gt;. It has been tested against Eclipse 2019-04 and later.&lt;/p&gt;
