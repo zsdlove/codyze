@@ -26,13 +26,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.codyze.io/docs/getting-started/installation/" />
 <meta property="article:published_time" content="2017-01-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-07-27T14:32:36+02:00" /><meta property="og:site_name" content="Codyze" />
+<meta property="article:modified_time" content="2020-07-27T14:47:12+02:00" /><meta property="og:site_name" content="Codyze" />
 <meta itemprop="name" content="Install Codyze">
 <meta itemprop="description" content="Integrate Codyze into your IDE to automatically spot errors your code or use it as a console application to manually explore source code. This page explains how to install Codyze.
 ">
 <meta itemprop="datePublished" content="2017-01-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-07-27T14:32:36&#43;02:00" />
-<meta itemprop="wordCount" content="349">
+<meta itemprop="dateModified" content="2020-07-27T14:47:12&#43;02:00" />
+<meta itemprop="wordCount" content="405">
 
 
 
@@ -106,7 +106,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.9d9710bf847a65d8406e443660d953da8844dd19074f6e373db2fd8a46eb90c003ed35d2fda39a233c5e0336aa2afc2178c17c8f1874d58bbf47c6958517777a.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.d9cc64b2692ddf975e78fdd1d1223bbddc5fafbd1e2a3873bc615ab72aaad71c7944421b21c3bcaa39babfdf5fbdde0f5847aa3fa25b3116e752dad0feeed8f3.json"
 >
 </div>
 </nav>
@@ -133,7 +133,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.9d9710bf847a65d8406e443660d953da8844dd19074f6e373db2fd8a46eb90c003ed35d2fda39a233c5e0336aa2afc2178c17c8f1874d58bbf47c6958517777a.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.d9cc64b2692ddf975e78fdd1d1223bbddc5fafbd1e2a3873bc615ab72aaad71c7944421b21c3bcaa39babfdf5fbdde0f5847aa3fa25b3116e752dad0feeed8f3.json"
 >
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -402,7 +402,22 @@
 <li>Run <code>bin\codyze.bat -l</code> (Windows) or <code>bin/codyze -l</code> (Mac, Linux) from the unzipped folder to start the analysis server in LSP mode</li>
 </ul>
 <h2 id="integration-in-eclipse">Integration in Eclipse</h2>
-<p>Codyze can be installed from the following Eclipse update site: <a href="https://update.breakpoint-security.com">https://update.breakpoint-security.com</a>. It has been tested against Eclipse 2019-04 and later.</p>
+<p>Codyze can be installed from an Eclipse update site. It has been tested against Eclipse 2019-04 and later.</p>
+<ol>
+<li>In Eclipse, click on <code>Help</code>-&gt;<code>Install New Software...</code></li>
+<li>Click <code>Add...</code> to add a new update site</li>
+<li>Choose a name and enter the location <a href="https://update.breakpoint-security.com">https://update.breakpoint-security.com</a> (note this is an Eclipse update site URL and not suited to open with a web browser)</li>
+</ol>
+<p><img src="/img/eclipse-update-site.png" 
+alt="Adding Eclipse Update Site"
+class="mt-3 mb-3 border border-info rounded"></p>
+<ol start="4">
+<li>Choose and install <code>Codyze Code Analyzer</code></li>
+</ol>
+<p><img src="/img/eclipse-plugin-installation.png" 
+alt="Adding Eclipse Update Site"
+class="mt-3 mb-3 border border-info rounded"></p>
+<p>Once installed, configure the Eclipse plugin to use the local LSP server:</p>
 <ol>
 <li>Go to <em>Windows-&gt;Preferences-&gt;Codyze Code Analysis</em> and configure the path to the analysis server binary</li>
 </ol>
@@ -442,7 +457,7 @@ class="mt-3 mb-3 border border-info rounded"></p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified July 27, 2020: <a  href="/commit/27d25b13e706f5e15b476c2fca210b22006201fc">Update installation.md (27d25b1)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 27, 2020: <a  href="/commit/0f7aff24e52fb0e15d40d4707c26f89fa7953619">Update installation.md (0f7aff2)</a>
 </div>
 </div>
 
