@@ -99,7 +99,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.d9cc64b2692ddf975e78fdd1d1223bbddc5fafbd1e2a3873bc615ab72aaad71c7944421b21c3bcaa39babfdf5fbdde0f5847aa3fa25b3116e752dad0feeed8f3.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.15382143b712c65c79331387c75adfa9d1ce00435147854054b3d9a1d462af440e1767e0553bd6756581d2e8c9f0f33044199dc23b698a01fde2b8919d84e638.json"
 >
 </div>
 </nav>
@@ -126,7 +126,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.d9cc64b2692ddf975e78fdd1d1223bbddc5fafbd1e2a3873bc615ab72aaad71c7944421b21c3bcaa39babfdf5fbdde0f5847aa3fa25b3116e752dad0feeed8f3.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.15382143b712c65c79331387c75adfa9d1ce00435147854054b3d9a1d462af440e1767e0553bd6756581d2e8c9f0f33044199dc23b698a01fde2b8919d84e638.json"
 >
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -425,16 +425,20 @@
 </thead>
 <tbody>
 <tr>
+<td><code>.allCalls()</code></td>
+<td>All function/method calls)</td>
+</tr>
+<tr>
 <td><code>.byID(int id)</code></td>
-<td>Node with the give id. The id of a node can be retrieved by the <code>.id()</code> step.</td>
+<td>Node with the given ID. The ID of a node can be retrieved by the <code>.id()</code> step.</td>
 </tr>
 <tr>
-<td><code>.calls()</code></td>
-<td>Calls to methods or functions (<code>CallExpression</code>)</td>
+<td><code>.calls(String subString)</code></td>
+<td>Calls to functions/methods (<code>CallExpression</code>) whose (fully qualified) name <em>contains</em> the argument.</td>
 </tr>
 <tr>
-<td><code>.calls(String calleeName)</code></td>
-<td>Calls to methods or functions matching this name (<code>CallExpression</code>)</td>
+<td><code>.callsFqn(String fqn)</code></td>
+<td>Calls to functions/methods (<code>CallExpression</code>) whose (fully qualified) name <em>matches exactly</em> the argument.</td>
 </tr>
 <tr>
 <td><code>.ctor(String type)</code></td>
@@ -453,12 +457,20 @@
 <td>Declarations of fields with the given name (<code>FieldDeclaration</code>)</td>
 </tr>
 <tr>
-<td><code>.functions()</code></td>
-<td>Class methods and functions (<code>FunctionDeclaration</code>)</td>
+<td><code>.functiondeclaration(String subString)</code></td>
+<td>Class methods and functions (<code>FunctionDeclaration</code>) whose name <em>contains</em> the argument</td>
+</tr>
+<tr>
+<td><code>.functiondeclarations()</code></td>
+<td>All class methods and functions (<code>FunctionDeclaration</code>)</td>
 </tr>
 <tr>
 <td><code>.methods()</code></td>
 <td>Class methods (<code>MethodDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.namespaces()</code></td>
+<td>Namespace declarations (<code>NamespaceDeclaration</code>)</td>
 </tr>
 <tr>
 <td><code>.records()</code></td>
@@ -467,6 +479,10 @@
 <tr>
 <td><code>.records(String name)</code></td>
 <td>Records such as classes, enums, structs that match the given name (<code>RecordDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.statements()</code></td>
+<td>All statements (<code>Statement</code>)</td>
 </tr>
 <tr>
 <td><code>.translationunits()</code></td>
@@ -585,7 +601,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 18, 2020: <a  href="/commit/78e10021d9cf4730754295d3c586193d992b87bd">doc: Crymlin&#43;&#43; (78e1002)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 29, 2020: <a  href="/commit/6ce870e8c796712f96c98f935cbd19b45196c3d1">Doc: Crymlin&#43;&#43; (6ce870e)</a>
 </div>
 </div>
 
