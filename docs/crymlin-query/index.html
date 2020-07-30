@@ -99,7 +99,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.cf55f94f4d898c68e7f59583c36b6e257b651de5278d13fdcf4b3d7f0915445e1c9d8a145048fed35023b54e60e226e5ac104129ac7a99c5fc1e16aa4c0f9ef8.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.c1bcc5660fcdb1f50a51dfd5c69fabd40c6634b9835157a406328e875ecdff33370de2af86c1d926434a0f260091f5473fe53299bdbc401e2635420efd8f1388.json"
 >
 </div>
 </nav>
@@ -126,7 +126,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.cf55f94f4d898c68e7f59583c36b6e257b651de5278d13fdcf4b3d7f0915445e1c9d8a145048fed35023b54e60e226e5ac104129ac7a99c5fc1e16aa4c0f9ef8.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.c1bcc5660fcdb1f50a51dfd5c69fabd40c6634b9835157a406328e875ecdff33370de2af86c1d926434a0f260091f5473fe53299bdbc401e2635420efd8f1388.json"
 >
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -335,9 +335,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#query-terminators">Query terminators</a></li>
         <li><a href="#traversal-sources">Traversal Sources</a></li>
         <li><a href="#traversal-steps">Traversal Steps</a></li>
+        <li><a href="#query-terminators">Query terminators</a></li>
       </ul>
     </li>
   </ul>
@@ -382,6 +382,200 @@
      <span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">toList</span><span style="color:#000;font-weight:bold">()</span>
 <span style="color:#000;font-weight:bold">[</span><span style="color:#000">main</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">toString</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">myMethod</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">someOtherMethod</span><span style="color:#000;font-weight:bold">]</span>
 </code></pre></div><p>In this example, <code>methods()</code> is a <em>traversal source</em> that starts iterating the graph at all nodes representing a method. <code>name()</code> is a <em>traversal step</em> that retrieves the <code>name</code> property of these nodes and <code>toList()</code> is a <em>terminator</em> that collects all names in a list. Every graph traversal needs a terminator to produce meaningful output. Until the console encounters a terminator, it will treat the graph traversal as an iterator that can be modified by further traversal steps.</p>
+<p>So, the general structure of a Crymlin query is</p>
+<pre><code> q.&lt;traversal source&gt;.&lt;traversal steps&gt;. ... .&lt;terminator&gt;
+</code></pre><h3 id="traversal-sources">Traversal Sources</h3>
+<p>Every query must begin with a traversal <em>source</em> which retrieves an initial iterator over nodes from the graph which can then be modified by further traversal steps. The most simple source is <code>V()</code> which includes all nodes of the graph.</p>
+<table>
+<thead>
+<tr>
+<th>Traversal Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.callsFqn(String fqn)</code></td>
+<td>Calls to functions/methods (<code>CallExpression</code>) whose (fully qualified) name <em>matches exactly</em> the argument.</td>
+</tr>
+<tr>
+<td><code>.byID(long)</code></td>
+<td>Node by its ID (<code>Node</code>)</td>
+</tr>
+<tr>
+<td><code>.calls()</code></td>
+<td>All function/method calls (<code>CallExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.calls(String)</code></td>
+<td>Calls to functions/methods whose (fully qualified) name contains the argument. (<code>CallExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.ctors(String)</code></td>
+<td>Constructors containing a given type (<code>ConstructExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.fields()</code></td>
+<td>Field declarations (<code>FieldDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.functions()</code></td>
+<td>All functions/methods (<code>FunctionDeclaration</code>, <code>MethodDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.functions(String)</code></td>
+<td>Functions/methods containing the given name (<code>FunctionDeclaration</code>, <code>MethodDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.ifstmts()</code></td>
+<td>All IfStatements (<code>IfStatement</code>)</td>
+</tr>
+<tr>
+<td><code>.ifstmts(String)</code></td>
+<td>IfStatements whose code contains the given substring (<code>IfStatement</code>)</td>
+</tr>
+<tr>
+<td><code>.methods()</code></td>
+<td>All class methods (Note: rather use &lsquo;functions()&rsquo; to include C/C++ functions) (<code>MethodDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.methods(String)</code></td>
+<td>Class methods containing the given name (Note: rather use &lsquo;functions()&rsquo; to include C/C++ functions)  (<code>MethodDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.namespaces()</code></td>
+<td>Namespaces (<code>NamespaceDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.namespaces(String)</code></td>
+<td>Namespaces containing the given substring (<code>NamespaceDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.nextCallByID(long)</code></td>
+<td>Next call statement following node by ID (<code>CallExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.prevCallByID(long)</code></td>
+<td>Next call statement following node by ID (<code>CallExpression</code>)</td>
+</tr>
+<tr>
+<td><code>.records()</code></td>
+<td>All RecordDeclarations (Java classes, enums, C/C++ structs) (<code>RecordDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.records(String)</code></td>
+<td>RecordDeclarations (Java classes, enums, C/C++ structs) containing the given name (<code>RecordDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.returns()</code></td>
+<td>All return statements (<code>ReturnStatement</code>)</td>
+</tr>
+<tr>
+<td><code>.sourcefiles()</code></td>
+<td>All source code files (<code>TranslationUnit</code>)</td>
+</tr>
+<tr>
+<td><code>.sourcefiles(String)</code></td>
+<td>Source code file containing the given name (<code>TranslationUnit</code>)</td>
+</tr>
+<tr>
+<td><code>.statements()</code></td>
+<td>Statements (<code>Statement</code>)</td>
+</tr>
+<tr>
+<td><code>.typedefs()</code></td>
+<td>All typedefs (<code>TypedefDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.typedefs(String)</code></td>
+<td>All typedefs containing the given name  (<code>TypedefDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.valdecl()</code></td>
+<td>All declarations of values (parameters, variables, fields, enums constants) (<code>ValueDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.valdecl(String)</code></td>
+<td>All declarations of values (parameters, variables, fields, enums constants) containing the given name (<code>ValueDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.vars()</code></td>
+<td>Variable declarations. Use valdecl() instead to include parameters, fields, and enums. (<code>VariableDeclaration</code>)</td>
+</tr>
+<tr>
+<td><code>.V()</code></td>
+<td>All nodes in the graph</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traversal-steps">Traversal Steps</h3>
+<p>Traversal sources and steps are the main operators of Crymlin queries. They determine which nodes and properties are retrieved from the graph. The Crymlin query language accepts all traversal steps supported by Apache Gremlin, plus the following steps which are specific to the exploration of the code property graph. Please refer to the <a href="https://tinkerpop.apache.org/gremlin.html">Apache Gremlin Specification</a> for further supported traversal steps.</p>
+<table>
+<thead>
+<tr>
+<th>Traversal Step    </th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="white-space: nowrap;"><code>.argument(int n)</code></span></td>
+<td>Returns the the n-th argument of a function or method call (<code>ArgumentExpression</code>)</td>
+</tr>
+<tr>
+<td><code>code()</code></td>
+<td>Original source code of the selected node(s)</td>
+</tr>
+<tr>
+<td><code>comment()</code></td>
+<td>Comments attached to the selected node(s)</td>
+</tr>
+<tr>
+<td><code>condition()</code></td>
+<td>Condition (of an IfStatement)</td>
+</tr>
+<tr>
+<td><code>condition(String</code>)</td>
+<td>Condition (of an IfStatement) containing the given substring</td>
+</tr>
+<tr>
+<td><code>elseStmt()</code></td>
+<td>&lsquo;else&rsquo; block (of an IfStatement)</td>
+</tr>
+<tr>
+<td><code>line()</code></td>
+<td>Source code line of the selected node(s)</td>
+</tr>
+<tr>
+<td><code>name()</code></td>
+<td>Name of the selected node(s)</td>
+</tr>
+<tr>
+<td><code>nextCfg()</code></td>
+<td>Next node(s) in Control Flow Graph</td>
+</tr>
+<tr>
+<td><code>nextEog()</code></td>
+<td>Next node(s) in Evaluation Order Graph</td>
+</tr>
+<tr>
+<td><code>prevCfg()</code></td>
+<td>Previous node(s) in Control Flow Graph</td>
+</tr>
+<tr>
+<td><code>prevEog()</code></td>
+<td>Previous node(s) in Evaluation Order Graph</td>
+</tr>
+<tr>
+<td><code>thenStmt()</code></td>
+<td>&lsquo;then&rsquo; block (of an IfStatement)</td>
+</tr>
+<tr>
+<td><code>type()</code></td>
+<td>Type of the node(s)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="query-terminators">Query terminators</h3>
 <p>The most used terminators are:</p>
 <table>
@@ -411,154 +605,6 @@
 <tr>
 <td><code>.count()</code></td>
 <td>Returns the number of elements matches by the query.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="traversal-sources">Traversal Sources</h3>
-<p>Every query must begin with a traversal <em>source</em> which retrieves an initial iterator over nodes from the graph which can then be modified by further traversal steps. The most simple source is <code>V()</code> which includes all nodes of the graph.</p>
-<table>
-<thead>
-<tr>
-<th>Traversal Source</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>.allCalls()</code></td>
-<td>All function/method calls)</td>
-</tr>
-<tr>
-<td><code>.byID(int id)</code></td>
-<td>Node with the given ID. The ID of a node can be retrieved by the <code>.id()</code> step.</td>
-</tr>
-<tr>
-<td><code>.calls(String subString)</code></td>
-<td>Calls to functions/methods (<code>CallExpression</code>) whose (fully qualified) name <em>contains</em> the argument.</td>
-</tr>
-<tr>
-<td><code>.callsFqn(String fqn)</code></td>
-<td>Calls to functions/methods (<code>CallExpression</code>) whose (fully qualified) name <em>matches exactly</em> the argument.</td>
-</tr>
-<tr>
-<td><code>.ctor(String type)</code></td>
-<td>Constructors of the given fully qualified type (<code>ConstructExpression</code>)</td>
-</tr>
-<tr>
-<td><code>.declarations()</code></td>
-<td>All declarations (of fields, variables, records, etc. (any of <code>FieldDeclaration</code>, <code>VariableDeclaration</code>, <code>RecordDeclaration</code>, etc.)</td>
-</tr>
-<tr>
-<td><code>.fields()</code></td>
-<td>Declarations of fields (<code>FieldDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.field(String fieldName)</code></td>
-<td>Declarations of fields with the given name (<code>FieldDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.functiondeclaration(String subString)</code></td>
-<td>Class methods and functions (<code>FunctionDeclaration</code>) whose name <em>contains</em> the argument</td>
-</tr>
-<tr>
-<td><code>.functiondeclarations()</code></td>
-<td>All class methods and functions (<code>FunctionDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.methods()</code></td>
-<td>Class methods (<code>MethodDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.namespaces()</code></td>
-<td>Namespace declarations (<code>NamespaceDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.records()</code></td>
-<td>Records are classes, enums, structs (<code>RecordDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.records(String name)</code></td>
-<td>Records such as classes, enums, structs that match the given name (<code>RecordDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.statements()</code></td>
-<td>All statements (<code>Statement</code>)</td>
-</tr>
-<tr>
-<td><code>.translationunits()</code></td>
-<td>File names of matching source code (<code>TranslationUnit</code>)</td>
-</tr>
-<tr>
-<td><code>.vars()</code></td>
-<td>Declarations of variables (<code>VariableDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.V()</code></td>
-<td>All nodes in the graph</td>
-</tr>
-</tbody>
-</table>
-<h3 id="traversal-steps">Traversal Steps</h3>
-<p>Traversal sources and steps are the main operators of Crymlin queries. They determine which nodes and properties are retrieved from the graph. The Crymlin query language accepts all traversal steps supported by Apache Gremlin, plus the following steps which are specific to the exploration of the code property graph.</p>
-<table>
-<thead>
-<tr>
-<th>Traversal Step    </th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span style="white-space: nowrap;"><code>.argument(int n)</code></span></td>
-<td>Returns the the n-th argument of a function or method call (<code>ArgumentExpression</code>)</td>
-</tr>
-<tr>
-<td><code>.body()</code></td>
-<td>Body of a function or method as a node. If the body contains more than one statement, this will typically return a <code>CompoundStatement</code> node</td>
-</tr>
-<tr>
-<td><code>.code()</code></td>
-<td>Source code of the selected nodes as a string</td>
-</tr>
-<tr>
-<td><code>.comment()</code></td>
-<td>Any inline comment of the current CPG node</td>
-</tr>
-<tr>
-<td><code>.file()</code></td>
-<td>Name of the source code file containing the current CPG node</td>
-</tr>
-<tr>
-<td><code>.label()</code></td>
-<td>Label of CPG node. The node label is the type of the CPG node (e.g., <code>MethodDeclaration</code>)</td>
-</tr>
-<tr>
-<td><code>.name()</code></td>
-<td>Name of the selected nodes as a string</td>
-</tr>
-<tr>
-<td><code>.nextCfg()</code></td>
-<td>Returns the next node(s) along the control flow graph (CFG)</td>
-</tr>
-<tr>
-<td><code>.prevCfg()</code></td>
-<td>Returns the next node(s) along the control flow graph (CFG)</td>
-</tr>
-<tr>
-<td><code>.nextEog()</code></td>
-<td>Next node(s) along the Evaluation Order Graph (EOG)</td>
-</tr>
-<tr>
-<td><code>.prevEog()</code></td>
-<td>Previous node(s) along the Evaluation Order Graph (EOG)</td>
-</tr>
-<tr>
-<td><code>.nextDfg()</code></td>
-<td>Next node(s) along the Evaluation Order Graph (EOG)</td>
-</tr>
-<tr>
-<td><code>.prevDfg()</code></td>
-<td>Previous node(s) along the Evaluation Order Graph (EOG)</td>
 </tr>
 </tbody>
 </table>
@@ -601,7 +647,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified July 29, 2020: <a  href="/commit/6ce870e8c796712f96c98f935cbd19b45196c3d1">Doc: Crymlin&#43;&#43; (6ce870e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 30, 2020: <a  href="/commit/8c313dfb906e16c3056e7224353086d85878fc32">Doc&#43;&#43; (8c313df)</a>
 </div>
 </div>
 
