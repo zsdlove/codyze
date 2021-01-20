@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.1" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -22,24 +22,25 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Documentation | Codyze</title><meta property="og:title" content="Documentation" />
-<meta property="og:description" content="Codyze is a static analysis tool to support developers in correctly using cryptographic libraries. 
+<meta property="og:description" content="Codyze is a static analysis tool to support developers in verifying compliance to security requirements
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.codyze.io/docs/" />
 <meta property="og:site_name" content="Codyze" />
 <meta itemprop="name" content="Documentation">
-<meta itemprop="description" content="Codyze is a static analysis tool to support developers in correctly using cryptographic libraries. 
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="Codyze is a static analysis tool to support developers in verifying compliance to security requirements
+">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Documentation"/>
-<meta name="twitter:description" content="Codyze is a static analysis tool to support developers in correctly using cryptographic libraries. 
+<meta name="twitter:description" content="Codyze is a static analysis tool to support developers in verifying compliance to security requirements
 "/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.bc9bad47a575ddb045a5acf71c77250fde831fd73eb2297d6f19ac160bb47a2f.css" as="style">
-<link href="/scss/main.min.bc9bad47a575ddb045a5acf71c77250fde831fd73eb2297d6f19ac160bb47a2f.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.scss" as="style">
+<link href="/scss/main.scss" rel="stylesheet" integrity="">
 
 
 <script
@@ -99,7 +100,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.a6a9ac5697340a0c2e8148a92e2d1aec0544f57335664b9d0b9d4114c308855ed47fa9b5077f21ffb7c9e9f52f924fdc189a018f0f32bd1978e3799b94d83fd5.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.f7e8e496c122705c9296f45e1dcf4a75196b1a05e9e52b3d16f891da5c1a195d3984a1b333084c9379902135416444e4f74bcc4e50640f3ad5c8a44b39eed0fe.json"
 >
 </div>
 </nav>
@@ -126,7 +127,7 @@
   placeholder="&#xf002; Search this site…"
   aria-label="Search this site…"
   autocomplete="off"
-  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.a6a9ac5697340a0c2e8148a92e2d1aec0544f57335664b9d0b9d4114c308855ed47fa9b5077f21ffb7c9e9f52f924fdc189a018f0f32bd1978e3799b94d83fd5.json"
+  data-offline-search-index-json-url="https://www.codyze.io/offline-search-index.f7e8e496c122705c9296f45e1dcf4a75196b1a05e9e52b3d16f891da5c1a195d3984a1b333084c9379902135416444e4f74bcc4e50640f3ad5c8a44b39eed0fe.json"
 >
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -352,8 +353,8 @@
             
 <div class="td-content">
 	<h1>Documentation</h1>
-	<div class="lead">Codyze is a static analysis tool to support developers in correctly using cryptographic libraries.</div>
-	<p>Cryptography is hard and implementing it correctly is even harder. Luckily, there are well-established and battle-proven libraries available that do the heavy lifting of efficient and side-channel resilient implementation of cryptographic primitives. But even when using these libraries in application code, developers run the risk of making subtle errors that may undermine the security of their application. This is where Codyze helps. It integrates into the IDE or CI pipeline, analyses source code and tells developers if they are using cryptographic libraries in a correct or in an insecure way.</p>
+	<div class="lead">Codyze is a static analysis tool to support developers in verifying compliance to security requirements</div>
+	<p>Security is hard and implementing it correctly is even harder. Luckily, there are well-established and battle-proven libraries available that do the heavy lifting of security functions such as authentication, logging or encryption. But even when using these libraries in application code, developers run the risk of making subtle errors that may undermine the security of their application. This is where Codyze helps. It integrates into the IDE or CI pipeline, analyses source code and tells developers if they are using libraries in a correct or in an insecure way.</p>
 <h2 id="how-does-it-work">How does it work?</h2>
 <p>In contrast to many other static analysis tools, Codyze directly analyzes the source code and does not require a compiler toolchain. It can thus even analyse incomplete source code and tolerate small syntax errors.</p>
 <p>Codyze is based on a &ldquo;Code Property Graph&rdquo;, which represents the source code as a graph and adds semantic information to support the analysis. This representation can be used in two ways:</p>
@@ -380,7 +381,7 @@ class="mt-3 mb-3"></p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 25, 2020: <a  href="/commit/29b0af73e5d4d48b4bdbee97081880bded0f58b2">Doc: Apply no_list to remove lists of subpages (29b0af7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 20, 2021: <a  href="/commit/b8a774a7257f9cfbc431bbe7997a70d757143e04">Trying to update documentation (b8a774a7)</a>
 </div>
 </div>
 
@@ -432,7 +433,7 @@ class="mt-3 mb-3"></p>
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2020 Fraunhofer AISEC All Rights Reserved</small>
+        <small class="text-white">&copy; 2021 Fraunhofer AISEC All Rights Reserved</small>
         <small class="ml-1"><a href="https://www.aisec.fraunhofer.de/en/data_protection.html" target="_blank">Privacy Policy</a></small>
 	
       </div>
