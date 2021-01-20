@@ -258,7 +258,7 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;s.show_findings()&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;List all findings, including correct and incorrect uses of cryptography. Make sure to call &lt;code&gt;analyze&lt;/code&gt; before. Note that the line numbers displayed by &lt;code&gt;show_findings()&lt;/code&gt; start counting at 1, as your editor does.&lt;/td&gt;
+&lt;td&gt;List all findings, including correct and incorrect uses of MARK rules. Make sure to call &lt;code&gt;analyze&lt;/code&gt; before. Note that the line numbers displayed by &lt;code&gt;show_findings()&lt;/code&gt; start counting at 1, as your editor does.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;s.list_rules()&lt;/code&gt;&lt;/td&gt;

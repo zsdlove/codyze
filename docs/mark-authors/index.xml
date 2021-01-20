@@ -54,14 +54,14 @@
 &lt;li&gt;A set of &lt;em&gt;ops&lt;/em&gt; (operations)&lt;/li&gt;
 &lt;li&gt;A set of MARK &lt;em&gt;variables&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Writing MARK rules for a cryptographic library requires a good understanding of the library API and its class hierarchy. We recommend the following approach to writing MARK entities.&lt;/p&gt;
+&lt;p&gt;Writing MARK rules for a library requires a good understanding of the library API and its class hierarchy. We recommend the following approach to writing MARK entities.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Model relevant classes as MARK entities&lt;/li&gt;
 &lt;li&gt;Define _op_s and variables&lt;/li&gt;
 &lt;li&gt;(Optionally) blacklist some _op_s&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;model-relevant-classes-as-mark-entities&#34;&gt;Model relevant classes as MARK entities&lt;/h2&gt;
-&lt;p&gt;It is certainly not necessary to model all classes of the software library as MARK entities. Rather, you need to identify those classes which hold cryptographic relevant data or provide cryptographic functions. Although in many cases, several classes of the programming language can be summarized in one abstract MARK entity, it might be easier to directly map classes to entities in the first iteration.&lt;/p&gt;
+&lt;p&gt;It is certainly not necessary to model all classes of the software library as MARK entities. Rather, you need to identify those classes which hold relevant data or provide functions. Although in many cases, several classes of the programming language can be summarized in one abstract MARK entity, it might be easier to directly map classes to entities in the first iteration.&lt;/p&gt;
 &lt;p&gt;The name of an entity can be freely chosen. If it refers to a specific class in the programming language, though, it might make sense to name them accordingly.&lt;/p&gt;
 &lt;h2 id=&#34;define-ops-and-variables&#34;&gt;Define Ops and variables&lt;/h2&gt;
 &lt;p&gt;The next step is to define _op_s. An &lt;em&gt;op&lt;/em&gt; is a group of semantically equal or similar functions, methods, or constructors, given as fully qualified signatures. Especially overloaded functions with the same name but different parameters are candidates for being grouped in an &lt;em&gt;op&lt;/em&gt;. For cryptographic libraries, typical _op_s are:&lt;/p&gt;
@@ -177,7 +177,7 @@
       <description>
         
         
-        &lt;p&gt;Once the core functions of a cryptographic library have been modeled as MARK entities, you can start writing rules. MARK rules operate over instances of entities and define conditions which must apply to these instances. A MARK &amp;ldquo;instance&amp;rdquo; may correspond to an actual object in the program, but in the case of non-object oriented languages or static methods, it may simply be an abstract set of function calls and variables.&lt;/p&gt;
+        &lt;p&gt;Once the core functions of a library have been modeled as MARK entities, you can start writing rules. MARK rules operate over instances of entities and define conditions which must apply to these instances. A MARK &amp;ldquo;instance&amp;rdquo; may correspond to an actual object in the program, but in the case of non-object oriented languages or static methods, it may simply be an abstract set of function calls and variables.&lt;/p&gt;
 &lt;h3 id=&#34;basic-rule-structure&#34;&gt;Basic rule structure&lt;/h3&gt;
 &lt;p&gt;MARK rules are structured as follows:&lt;/p&gt;
 &lt;pre&gt;
@@ -205,7 +205,7 @@
 }
 &lt;/pre&gt;
 &lt;h3 id=&#34;preconditions&#34;&gt;Preconditions&lt;/h3&gt;
-&lt;p&gt;Some rules only apply if certain preconditions are fulfiled, i.e. such preconditions will be evaluated before the actual condition. If they fail, the main condition will not be evaluated and the rule will not return any result (i.e. it will neither confirm a valid program nor flag a wrong program). Preconditions follow the same syntax as the main condition, but are declared by the &lt;code&gt;when&lt;/code&gt; keyword.&lt;/p&gt;
+&lt;p&gt;Some rules only apply if certain preconditions are fulfilled, i.e. such preconditions will be evaluated before the actual condition. If they fail, the main condition will not be evaluated and the rule will not return any result (i.e. it will neither confirm a valid program nor flag a wrong program). Preconditions follow the same syntax as the main condition, but are declared by the &lt;code&gt;when&lt;/code&gt; keyword.&lt;/p&gt;
 &lt;pre&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;rule&lt;/span&gt; ID_2 {
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;using&lt;/span&gt;
