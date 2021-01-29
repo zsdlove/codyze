@@ -32,6 +32,9 @@ import org.reflections.util.FilterBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import overflowdb.*;
+import overflowdb.Edge;
+import overflowdb.Graph;
+import overflowdb.tinkerpop.OdbGraphTp3;
 
 import java.io.File;
 import java.io.IOException;
@@ -82,8 +85,8 @@ public class OverflowDatabase implements Database<Node> {
 
 	private final ServerConfiguration config;
 
-	private OdbGraph graph;
-	private OdbConfig odbConfig;
+	private OdbGraphTp3 graph;
+	private Config odbConfig;
 
 	private static final Map<String, List<Field>> fieldsIncludingSuperclasses = new HashMap<>();
 	private static final Map<String, Pair<List<EdgeLayoutInformation>, List<EdgeLayoutInformation>>> inAndOutFields = new HashMap<>();
@@ -131,11 +134,11 @@ public class OverflowDatabase implements Database<Node> {
 
 	public void connect() {
 		// Create factories for nodes and edges of CPG.
-		Pair<List<NodeFactory<OdbNode>>, List<EdgeFactory<OdbEdge>>> factories = getFactories();
-		List<NodeFactory<OdbNode>> nodeFactories = factories.getValue0();
-		List<EdgeFactory<OdbEdge>> edgeFactories = factories.getValue1();
+		Pair<List<NodeFactory<NodeDb>>, List<EdgeFactory<Edge>>> factories = getFactories();
+		List<NodeFactory<NodeDb>> nodeFactories = factories.getValue0();
+		List<EdgeFactory<Edge>> edgeFactories = factories.getValue1();
 
-		odbConfig = OdbConfig.withDefaults();
+		odbConfig = Config.withDefaults();
 
 		if (config.disableOverflow) {
 			odbConfig.disableOverflow();
@@ -143,10 +146,10 @@ public class OverflowDatabase implements Database<Node> {
 			odbConfig.withStorageLocation("graph-cache-overflow.bin").withHeapPercentageThreshold(5);
 		}
 
-		graph = OdbGraph.open(
+		graph = OdbGraphTp3.wrap(Graph.open(
 			odbConfig,
 			Collections.unmodifiableList(nodeFactories),
-			Collections.unmodifiableList(edgeFactories));
+			Collections.unmodifiableList(edgeFactories)));
 	}
 
 	@Override
@@ -234,14 +237,14 @@ public class OverflowDatabase implements Database<Node> {
 		return Collections.emptyMap();
 	}
 
-	private List<PropertyEdge<Node>> rebuildPropertyEdges(List<Edge> targetEdges) {
+	private List<PropertyEdge<Node>> rebuildPropertyEdges(List<org.apache.tinkerpop.gremlin.structure.Edge> targetEdges) {
 		List<PropertyEdge<Node>> targets = new ArrayList<>();
-		for (Edge edge : targetEdges) {
-			Node startNode = vertexToNode(((OdbEdge) edge).outNode());
-			Node endNode = vertexToNode(((OdbEdge) edge).inNode());
+		for (var edge : targetEdges) {
+			Node startNode = vertexToNode(edge.vertices(Direction.OUT).next());
+			Node endNode = vertexToNode(edge.vertices(Direction.IN).next());
 
 			PropertyEdgeConverter propertyEdgeConverter = new PropertyEdgeConverter();
-			Map<Properties, Object> propertyMap = propertyEdgeConverter.toEntityAttribute(((OdbEdge) edge).propertyMap());
+			Map<Properties, Object> propertyMap = propertyEdgeConverter.toEntityAttribute(((Edge) edge).propertyMap());
 
 			var propertyEdge = new PropertyEdge<>(startNode, endNode, propertyMap);
 			targets.add(propertyEdge);
@@ -299,7 +302,7 @@ public class OverflowDatabase implements Database<Node> {
 							.map(this::vertexToNode)
 							.collect(Collectors.toList());
 
-					List<Edge> targetEdges = IteratorUtils.stream(v.edges(direction, getRelationshipLabel(f))).collect(Collectors.toList());
+					var targetEdges = IteratorUtils.stream(v.edges(direction, getRelationshipLabel(f))).collect(Collectors.toList());
 
 					if (isCollection(f.getType())) {
 
@@ -954,14 +957,14 @@ public class OverflowDatabase implements Database<Node> {
 	/**
 	 * Generate the Node and Edge factories that are required by OverflowDB.
 	 */
-	private Pair<List<NodeFactory<OdbNode>>, List<EdgeFactory<OdbEdge>>> getFactories() {
+	private Pair<List<NodeFactory<NodeDb>>, List<EdgeFactory<Edge>>> getFactories() {
 		Set<Class<? extends Node>> allClasses = reflections.getSubTypesOf(Node.class);
 		allClasses.add(Node.class);
 
 		// Make sure to first call createEdgeFactories, which will collect some IN fields needed for
 		// createNodeFactories
-		Pair<List<EdgeFactory<OdbEdge>>, Map<Class<?>, Set<MutableEdgeLayout>>> edgeFactories = createEdgeFactories(allClasses);
-		List<NodeFactory<OdbNode>> nodeFactories = createNodeFactories(allClasses, edgeFactories.getValue1());
+		Pair<List<EdgeFactory<Edge>>, Map<Class<?>, Set<MutableEdgeLayout>>> edgeFactories = createEdgeFactories(allClasses);
+		List<NodeFactory<NodeDb>> nodeFactories = createNodeFactories(allClasses, edgeFactories.getValue1());
 
 		return new Pair<>(nodeFactories, edgeFactories.getValue0());
 	}
@@ -972,11 +975,11 @@ public class OverflowDatabase implements Database<Node> {
 	 * @param allClasses Set of classes to create edge factories for.
 	 * @return a Pair of edge factories and a pre-computed map of classes/IN-Fields.
 	 */
-	private Pair<List<EdgeFactory<OdbEdge>>, Map<Class<?>, Set<MutableEdgeLayout>>> createEdgeFactories(
+	private Pair<List<EdgeFactory<Edge>>, Map<Class<?>, Set<MutableEdgeLayout>>> createEdgeFactories(
 			@NonNull Set<Class<? extends Node>> allClasses) {
 		final HashMap<Class<?>, Set<Class<?>>> subclassCache = new HashMap<>();
 		Map<Class<?>, Set<MutableEdgeLayout>> inEdgeLayouts = new HashMap<>();
-		List<EdgeFactory<OdbEdge>> edgeFactories = new ArrayList<>();
+		List<EdgeFactory<Edge>> edgeFactories = new ArrayList<>();
 		for (Class<?> c : allClasses) {
 			for (Field field : getFieldsIncludingSuperclasses(c)) {
 				if (!mapsToRelationship(field)) {
@@ -1032,15 +1035,15 @@ public class OverflowDatabase implements Database<Node> {
 					}
 				}
 
-				EdgeFactory<OdbEdge> edgeFactory = new EdgeFactory<>() {
+				EdgeFactory<Edge> edgeFactory = new EdgeFactory<>() {
 					@Override
 					public String forLabel() {
 						return getRelationshipLabel(field);
 					}
 
 					@Override
-					public OdbEdge createEdge(OdbGraph graph, NodeRef outNode, NodeRef inNode) {
-						return new OdbEdge(
+					public Edge createEdge(Graph graph, NodeRef outNode, NodeRef inNode) {
+						return new Edge(
 							graph, getRelationshipLabel(field), outNode, inNode, Sets.newHashSet()) {
 						};
 					}
@@ -1187,10 +1190,10 @@ public class OverflowDatabase implements Database<Node> {
 	 *  @param allClasses    classes to create node factories for.
 	 * @param inEdgeLayouts Map from class names to IN edge layouts which must be supported by that
 	 */
-	private List<NodeFactory<OdbNode>> createNodeFactories(
+	private List<NodeFactory<NodeDb>> createNodeFactories(
 			@NonNull Set<Class<? extends Node>> allClasses,
 			Map<Class<?>, Set<MutableEdgeLayout>> inEdgeLayouts) {
-		List<NodeFactory<OdbNode>> nodeFactories = new ArrayList<>();
+		List<NodeFactory<NodeDb>> nodeFactories = new ArrayList<>();
 		for (Class<? extends Node> c : allClasses) {
 			nodeFactories.add(createNodeFactory(c, inEdgeLayouts));
 		}
@@ -1203,21 +1206,21 @@ public class OverflowDatabase implements Database<Node> {
 	 * @param inEdgeLayouts
 	 * @return
 	 */
-	private NodeFactory<OdbNode> createNodeFactory(@NonNull Class<? extends Node> c, Map<Class<?>, Set<MutableEdgeLayout>> inEdgeLayouts) {
-		return new NodeFactory<>() {
+	private NodeFactory<NodeDb> createNodeFactory(@NonNull Class<? extends Node> c, Map<Class<?>, Set<MutableEdgeLayout>> inEdgeLayouts) {
+		return new NodeFactory<NodeDb>() {
 			@Override
 			public String forLabel() {
 				return c.getSimpleName();
 			}
 
 			@Override
-			public int forLabelId() {
-				return c.getSimpleName().hashCode();
-			}
+			public NodeDb createNode(NodeRef<NodeDb> ref) {
+				return new NodeDb(ref) {
+					@Override
+					public Object property(String key) {
+						return null;
+					}
 
-			@Override
-			public OdbNode createNode(NodeRef<OdbNode> ref) {
-				return new OdbNode(ref) {
 					private final Map<String, Object> propertyValues = new HashMap<>();
 
 					/**
@@ -1265,34 +1268,34 @@ public class OverflowDatabase implements Database<Node> {
 							}
 						}
 
-						NodeLayoutInformation result = new NodeLayoutInformation(forLabelId(), properties, out, in);
+						NodeLayoutInformation result = new NodeLayoutInformation(forLabel(), properties, out, in);
 						layoutInformation.putIfAbsent(c.getSimpleName(), result);
 						return result;
 					}
 
-					@Override
+					/*@Override
 					@SuppressWarnings("java:S125")
 					protected <V> Iterator<VertexProperty<V>> specificProperties(String key) {
 						/*
 						 * We filter out null property values here. GraphMLWriter cannot handle these and will die with NPE. Gremlin assumes that property values are
 						 * non-null.
 						 */
-						Object values = this.propertyValues.get(key);
-						if (values == null) {
-							// the following empty collection filter breaks vertexToNode, but might be needed
-							// for GraphMLWriter. Leaving this in for future reference
-							//                || (Collection.class.isAssignableFrom(values.getClass())
-							//                    && ((Collection) values).isEmpty())) {
-							return Collections.<VertexProperty<V>> emptyIterator();
-						}
-						return IteratorUtils.<VertexProperty<V>> of(
-							new OdbNodeProperty<V>(this, key, (V) this.propertyValues.get(key)));
+					/*Object values = this.propertyValues.get(key);
+					if (values == null) {
+						// the following empty collection filter breaks vertexToNode, but might be needed
+						// for GraphMLWriter. Leaving this in for future reference
+						//                || (Collection.class.isAssignableFrom(values.getClass())
+						//                    && ((Collection) values).isEmpty())) {
+						return Collections.<VertexProperty<V>> emptyIterator();
 					}
+					/*return IteratorUtils.<VertexProperty<V>> of(
+						new OdbNodeProperty<V>(this, key, (V) this.propertyValues.get(key)));
+					}*/
 
-					@Override
+					/*@Override
 					protected Object specificProperty2(String key) {
 						return this.propertyValues.get(key);
-					}
+					}*/
 
 					@Override
 					public Map<String, Object> valueMap() {
@@ -1300,11 +1303,16 @@ public class OverflowDatabase implements Database<Node> {
 					}
 
 					@Override
+					protected void updateSpecificProperty(String key, Object value) {
+						this.propertyValues.put(key, value);
+					}
+
+					/*@Override
 					protected <V> VertexProperty<V> updateSpecificProperty(
 							VertexProperty.Cardinality cardinality, String key, V value) {
 						this.propertyValues.put(key, value);
 						return new OdbNodeProperty<>(this, key, value);
-					}
+					}*/
 
 					@Override
 					protected void removeSpecificProperty(String key) {
@@ -1314,7 +1322,7 @@ public class OverflowDatabase implements Database<Node> {
 			}
 
 			@Override
-			public NodeRef<OdbNode> createNodeRef(OdbGraph graph, long id) {
+			public NodeRef<NodeDb> createNodeRef(Graph graph, long id) {
 				return new NodeRef<>(graph, id) {
 					@Override
 					public String label() {
@@ -1386,7 +1394,7 @@ public class OverflowDatabase implements Database<Node> {
 	 *
 	 * @return
 	 */
-	public Graph getGraph() {
+	public org.apache.tinkerpop.gremlin.structure.Graph getGraph() {
 		return this.graph;
 	}
 
