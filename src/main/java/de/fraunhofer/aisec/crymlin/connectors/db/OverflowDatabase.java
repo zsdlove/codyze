@@ -1207,7 +1207,7 @@ public class OverflowDatabase implements Database<Node> {
 	 * @return
 	 */
 	private NodeFactory<NodeDb> createNodeFactory(@NonNull Class<? extends Node> c, Map<Class<?>, Set<MutableEdgeLayout>> inEdgeLayouts) {
-		return new NodeFactory<NodeDb>() {
+		return new NodeFactory<>() {
 			@Override
 			public String forLabel() {
 				return c.getSimpleName();
@@ -1218,7 +1218,7 @@ public class OverflowDatabase implements Database<Node> {
 				return new NodeDb(ref) {
 					@Override
 					public Object property(String key) {
-						return null;
+						return propertyValues.get(key);
 					}
 
 					private final Map<String, Object> propertyValues = new HashMap<>();
@@ -1234,7 +1234,7 @@ public class OverflowDatabase implements Database<Node> {
 						if (layoutInformation.containsKey(c.getSimpleName())) {
 							return layoutInformation.get(c.getSimpleName());
 						}
-						if (((long) ref.id()) % 100 == 0) {
+						if (ref.id() % 100 == 0) {
 							log.info("Cache miss for layoutInformation for {}", c.getSimpleName());
 						}
 
@@ -1273,30 +1273,6 @@ public class OverflowDatabase implements Database<Node> {
 						return result;
 					}
 
-					/*@Override
-					@SuppressWarnings("java:S125")
-					protected <V> Iterator<VertexProperty<V>> specificProperties(String key) {
-						/*
-						 * We filter out null property values here. GraphMLWriter cannot handle these and will die with NPE. Gremlin assumes that property values are
-						 * non-null.
-						 */
-					/*Object values = this.propertyValues.get(key);
-					if (values == null) {
-						// the following empty collection filter breaks vertexToNode, but might be needed
-						// for GraphMLWriter. Leaving this in for future reference
-						//                || (Collection.class.isAssignableFrom(values.getClass())
-						//                    && ((Collection) values).isEmpty())) {
-						return Collections.<VertexProperty<V>> emptyIterator();
-					}
-					/*return IteratorUtils.<VertexProperty<V>> of(
-						new OdbNodeProperty<V>(this, key, (V) this.propertyValues.get(key)));
-					}*/
-
-					/*@Override
-					protected Object specificProperty2(String key) {
-						return this.propertyValues.get(key);
-					}*/
-
 					@Override
 					public Map<String, Object> valueMap() {
 						return propertyValues;
@@ -1306,13 +1282,6 @@ public class OverflowDatabase implements Database<Node> {
 					protected void updateSpecificProperty(String key, Object value) {
 						this.propertyValues.put(key, value);
 					}
-
-					/*@Override
-					protected <V> VertexProperty<V> updateSpecificProperty(
-							VertexProperty.Cardinality cardinality, String key, V value) {
-						this.propertyValues.put(key, value);
-						return new OdbNodeProperty<>(this, key, value);
-					}*/
 
 					@Override
 					protected void removeSpecificProperty(String key) {
