@@ -34,6 +34,8 @@ import org.slf4j.LoggerFactory;
 import overflowdb.*;
 import overflowdb.Edge;
 import overflowdb.Graph;
+import overflowdb.tinkerpop.NodeTp3;
+import overflowdb.tinkerpop.OdbEdgeTp3;
 import overflowdb.tinkerpop.OdbGraphTp3;
 
 import java.io.File;
@@ -212,24 +214,27 @@ public class OverflowDatabase implements Database<Node> {
 	}
 
 	/**
-	 * Returns a map of all properties of a Vertex. This is a copy of the actual map stored in the
+	 * Returns a map of all properties of a NodeRef. This is a copy of the actual map stored in the
 	 * vertex and can thus be safely modified.
 	 *
 	 * <p>Note that the map will not contain the id() and label() of the Vertex. If it contains
 	 * properties with key "id" or "label", their values might or might not equal the results of id()
 	 * and label(). Always use the latter functions to get IDs and labels.
 	 */
-	private <K, V> Map<K, V> getAllProperties(Vertex v) {
+	private <K, V> Map<K, V> getAllProperties(NodeRef<NodeDb> ref) {
 		try {
 			Field node = NodeRef.class.getDeclaredField("node");
 			node.setAccessible(true);
-			Object n = node.get(v);
+			Object n = node.get(ref);
+
+			// TODO: Would be easier if we extract our specific NodeDb into a seperate class
+
 			Field propertyValues = n.getClass().getDeclaredField("propertyValues");
 			propertyValues.setAccessible(true);
 			return new HashMap<>((Map<K, V>) propertyValues.get(n));
 		}
 		catch (NoSuchFieldException e) {
-			log.error("Vertex has no field called propertyValues!");
+			log.error("Vertex has no field called !");
 		}
 		catch (IllegalAccessException e) {
 			log.error("IllegalAccess ", e);
@@ -237,14 +242,14 @@ public class OverflowDatabase implements Database<Node> {
 		return Collections.emptyMap();
 	}
 
-	private List<PropertyEdge<Node>> rebuildPropertyEdges(List<org.apache.tinkerpop.gremlin.structure.Edge> targetEdges) {
+	private List<PropertyEdge<Node>> rebuildPropertyEdges(List<Edge> targetEdges) {
 		List<PropertyEdge<Node>> targets = new ArrayList<>();
 		for (var edge : targetEdges) {
-			Node startNode = vertexToNode(edge.vertices(Direction.OUT).next());
-			Node endNode = vertexToNode(edge.vertices(Direction.IN).next());
+			Node startNode = refToNode(edge.outNode());
+			Node endNode = refToNode(edge.inNode());
 
 			PropertyEdgeConverter propertyEdgeConverter = new PropertyEdgeConverter();
-			Map<Properties, Object> propertyMap = propertyEdgeConverter.toEntityAttribute(((Edge) edge).propertyMap());
+			Map<Properties, Object> propertyMap = propertyEdgeConverter.toEntityAttribute(edge.propertyMap());
 
 			var propertyEdge = new PropertyEdge<>(startNode, endNode, propertyMap);
 			targets.add(propertyEdge);
@@ -260,13 +265,23 @@ public class OverflowDatabase implements Database<Node> {
 	@Override
 	@Nullable
 	public Node vertexToNode(Vertex v) {
+		return refToNode(((NodeTp3<NodeDb>) v).nodeRef);
+	}
+
+	/**
+	 * Constructs a native Node object from a given Vertex or returns a cached Node object.
+	 *
+	 * @return Null, if the Vertex could not be converted into a native object.
+	 */
+	@Nullable
+	public Node refToNode(NodeRef<NodeDb> v) {
 		// avoid loops
 		if (nodesCache.containsKey((Long) v.id())) {
 			return nodesCache.get((Long) v.id());
 		}
 
 		Class<?> targetClass;
-		String nodeType = (String) v.property("nodeType").value();
+		String nodeType = (String) v.property("nodeType");
 		try {
 			targetClass = Class.forName(nodeType);
 		}
@@ -290,19 +305,34 @@ public class OverflowDatabase implements Database<Node> {
 					/* Need to first handle attributes which need a special treatment (annotated with AttributeConverter or CompositeConverter) */
 					Object value = convertToNodeProperty(v, f);
 					f.set(node, value);
-				} else if (mapsToProperty(f) && v.property(f.getName()).isPresent()) {
+				} else if (mapsToProperty(f) && v.property(f.getName()) != null) {
 					/* Handle "normal" properties */
 					Object value = restoreProblematicProperty(v, f.getName());
 					f.set(node, value);
 				} else if (mapsToRelationship(f)) {
 					/* Handle properties which should be treated as relationships */
 					Direction direction = getRelationshipDirection(f);
-					List<?> targets = IteratorUtils.stream(v.vertices(direction, getRelationshipLabel(f)))
-							.filter(distinctByKey(Vertex::id))
-							.map(this::vertexToNode)
-							.collect(Collectors.toList());
+					Iterator<overflowdb.Node> itNode;
+					Iterator<overflowdb.Edge> itEdge;
 
-					var targetEdges = IteratorUtils.stream(v.edges(direction, getRelationshipLabel(f))).collect(Collectors.toList());
+					if (direction == Direction.IN) {
+						itNode = v.in(getRelationshipLabel(f));
+						itEdge = v.inE(getRelationshipLabel(f));
+					} else if (direction == Direction.OUT) {
+						itNode = v.out(getRelationshipLabel(f));
+						itEdge = v.outE(getRelationshipLabel(f));
+					} else {
+						itNode = v.both(getRelationshipLabel(f));
+						itEdge = v.bothE(getRelationshipLabel(f));
+					}
+
+					List<?> targets = IteratorUtils.stream(itNode)
+							.filter(distinctByKey(overflowdb.Node::id))
+							.map(x -> refToNode((NodeRef<NodeDb>) x))
+							.collect(Collectors.toList());
+					;
+
+					var targetEdges = IteratorUtils.stream(itEdge).collect(Collectors.toList());
 
 					if (isCollection(f.getType())) {
 
@@ -322,7 +352,11 @@ public class OverflowDatabase implements Database<Node> {
 						Class<?> collectionType;
 						String className = "";
 						try {
-							className = (String) v.property(f.getName() + "_type").value();
+							className = (String) v.property(f.getName() + "_type");
+
+							if (className == null) {
+								log.error("Type not stored!");
+							}
 							collectionType = Class.forName(className);
 						}
 						catch (ClassNotFoundException e) {
@@ -531,19 +565,19 @@ public class OverflowDatabase implements Database<Node> {
 	 * applicable). See <code>restoreProblematicProperties</code> for conversion of all node
 	 * properties.
 	 *
-	 * @param v
+	 * @param ref
 	 * @param key
 	 * @return
 	 */
-	private Object restoreProblematicProperty(Vertex v, String key) {
+	private Object restoreProblematicProperty(NodeRef<NodeDb> ref, String key) {
 		// Check whether this value has been converted before being persisted (e.g. String[])
-		if (v.property(key + "_converted-from").isPresent()) {
-			String type = (String) v.property(key + "_converted-from").value();
+		if (ref.property(key + "_converted-from") != null) {
+			String type = (String) ref.property(key + "_converted-from");
 			switch (type) {
 				case "String[]":
-					return ((String) v.property(key).value()).split(", ");
+					return ((String) ref.property(key)).split(", ");
 				case "Character":
-					return ((String) v.property(key).value()).charAt(0);
+					return ((String) ref.property(key)).charAt(0);
 				default:
 					log.error("Unknown converter type: {}", type);
 					return null;
@@ -551,7 +585,8 @@ public class OverflowDatabase implements Database<Node> {
 		} else {
 			// If available, take the "_original" version, which might be present because of an
 			// int->long conversion
-			return v.property(key + "_original").orElse(v.property(key).value());
+			var prop = ref.property(key + "_original");
+			return prop != null ? prop : ref.property(key);
 		}
 	}
 
@@ -559,14 +594,14 @@ public class OverflowDatabase implements Database<Node> {
 	 * Applies <code>restoreProblematicProperty</code> on all properties of a given <code>Vertex
 	 * </code>
 	 *
-	 * @param v
+	 * @param
 	 * @return
 	 */
 	@NonNull
-	private Map<String, Object> restoreProblematicProperties(Vertex v) {
-		Map<String, Object> properties = getAllProperties(v);
+	private Map<String, Object> restoreProblematicProperties(NodeRef<NodeDb> ref) {
+		Map<String, Object> properties = getAllProperties(ref);
 		for (String key : properties.keySet()) {
-			Object value = restoreProblematicProperty(v, key);
+			Object value = restoreProblematicProperty(ref, key);
 			properties.put(key, value);
 		}
 		return properties;
@@ -625,11 +660,11 @@ public class OverflowDatabase implements Database<Node> {
 	 *
 	 * <p>Inverse of <code>convertToVertexProperties</code>.
 	 */
-	private Object convertToNodeProperty(Vertex v, Field f) {
+	private Object convertToNodeProperty(NodeRef<NodeDb> ref, Field f) {
 		try {
 			Object converter = f.getAnnotation(Convert.class).value().getDeclaredConstructor().newInstance();
 			// check whether any property value has been altered. If so, restore its original version
-			Map<String, Object> properties = restoreProblematicProperties(v);
+			Map<String, Object> properties = restoreProblematicProperties(ref);
 			if (converter instanceof AttributeConverter) {
 				// Single attribute will be provided
 				return ((AttributeConverter) converter).toEntityAttribute(properties.get(f.getName()));
