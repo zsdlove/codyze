@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codyze – Get Started</title>
-    <link>https://www.codyze.io/docs/getting-started/</link>
+    <link>http://localhost:8080/docs/getting-started/</link>
     <description>Recent content in Get Started on Codyze</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://www.codyze.io/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:8080/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Install Codyze</title>
-      <link>https://www.codyze.io/docs/getting-started/installation/</link>
+      <link>http://localhost:8080/docs/getting-started/installation/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.codyze.io/docs/getting-started/installation/</guid>
+      <guid>http://localhost:8080/docs/getting-started/installation/</guid>
       <description>
         
         
@@ -41,26 +41,26 @@
 &lt;li&gt;Click &lt;code&gt;Add...&lt;/code&gt; to add a new update site&lt;/li&gt;
 &lt;li&gt;Choose a name and enter the location &lt;a href=&#34;https://codyze.s3.eu-central-1.amazonaws.com/codyze-eclipse-plugin/&#34;&gt;https://codyze.s3.eu-central-1.amazonaws.com/codyze-eclipse-plugin/&lt;/a&gt; (note this is an Eclipse update site URL and not suited to open with a web browser)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/eclipse-update-site.png&#34; 
+&lt;p&gt;&lt;img src=&#34;http://localhost:8080/img/eclipse-update-site.png&#34; 
 alt=&#34;Adding Eclipse Update Site&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Choose and install &lt;code&gt;Codyze Code Analyzer&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/eclipse-plugin-installation.png&#34; 
+&lt;p&gt;&lt;img src=&#34;http://localhost:8080/img/eclipse-plugin-installation.png&#34; 
 alt=&#34;Adding Eclipse Update Site&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Once installed, configure the Eclipse plugin to use the local LSP server:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Go to &lt;em&gt;Windows-&amp;gt;Preferences-&amp;gt;Codyze Code Analysis&lt;/em&gt; and configure the path to the analysis server binary&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/eclipse-plugin-2.png&#34; 
+&lt;p&gt;&lt;img src=&#34;http://localhost:8080/img/eclipse-plugin-2.png&#34; 
 alt=&#34;Configuring Eclipse Plugin&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;If the configuration is correct, &lt;code&gt;.java&lt;/code&gt; and &lt;code&gt;.cpp&lt;/code&gt; files will be automatically scanned when they are saved. Any errors found by Codyze will be highlighted as problems. If Codyze verifies that an API is correctly used, it will create mark the line with a hint.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/eclipse-plugin-1.png&#34; 
+&lt;p&gt;&lt;img src=&#34;http://localhost:8080/img/eclipse-plugin-1.png&#34; 
 alt=&#34;Configuring Eclipse Plugin&#34;
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;integration-in-intellij&#34;&gt;Integration in IntelliJ&lt;/h2&gt;
@@ -69,13 +69,13 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;li&gt;Goto &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Language Server Protocol&lt;/code&gt; -&amp;gt; &lt;code&gt;Server Definitions&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Add a new server definition of type &lt;code&gt;Executable&lt;/code&gt; for extension &lt;code&gt;java&lt;/code&gt; and navigate to your local &lt;code&gt;codyze-&amp;lt;version&amp;gt;/bin/codyze&lt;/code&gt; script.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/lsp-settings-intellij.png&#34; 
+&lt;p&gt;&lt;img src=&#34;http://localhost:8080/img/lsp-settings-intellij.png&#34; 
 alt=&#34;IntelliJ LSP Settings&#34; 
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If everything works as intended, you should see a green circle in your IntelliJ status bar, indicating that the connection to the language server was successful.&lt;/p&gt;
 &lt;h2 id=&#34;integration-in-visual-studio-2019&#34;&gt;Integration in Visual Studio 2019&lt;/h2&gt;
 &lt;p&gt;The Codyze eclipse can be installed from the Visual Studio 2019 Marketplace&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.codyze.io/img/vs-plugin.jpg&#34; 
+&lt;p&gt;&lt;img src=&#34;http://localhost:8080/img/vs-plugin.jpg&#34; 
 alt=&#34;Installation from Visual Studio Market&#34; 
 class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If you prefer installing the plugin from the release page, proceed as follows:&lt;/p&gt;
@@ -93,10 +93,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: Using CLI mode</title>
-      <link>https://www.codyze.io/docs/getting-started/cli/</link>
+      <link>http://localhost:8080/docs/getting-started/cli/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.codyze.io/docs/getting-started/cli/</guid>
+      <guid>http://localhost:8080/docs/getting-started/cli/</guid>
       <description>
         
         
@@ -163,10 +163,10 @@ class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
     
     <item>
       <title>Docs: Using the Codyze Console</title>
-      <link>https://www.codyze.io/docs/getting-started/console/</link>
+      <link>http://localhost:8080/docs/getting-started/console/</link>
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.codyze.io/docs/getting-started/console/</guid>
+      <guid>http://localhost:8080/docs/getting-started/console/</guid>
       <description>
         
         

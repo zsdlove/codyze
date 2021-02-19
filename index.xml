@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codyze – Codyze</title>
-    <link>https://www.codyze.io/</link>
+    <link>http://localhost:8080/</link>
     <description>Recent content on Codyze</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://www.codyze.io/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:8080/index.xml" rel="self" type="application/rss+xml" />
     
     
       

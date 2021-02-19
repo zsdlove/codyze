@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codyze – Write MARK Policies</title>
-    <link>https://www.codyze.io/docs/mark-authors/</link>
+    <link>http://localhost:8080/docs/mark-authors/</link>
     <description>Recent content in Write MARK Policies on Codyze</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://www.codyze.io/docs/mark-authors/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:8080/docs/mark-authors/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Install MARK IDE</title>
-      <link>https://www.codyze.io/docs/mark-authors/installation/</link>
+      <link>http://localhost:8080/docs/mark-authors/installation/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.codyze.io/docs/mark-authors/installation/</guid>
+      <guid>http://localhost:8080/docs/mark-authors/installation/</guid>
       <description>
         
         
@@ -41,10 +41,10 @@
     
     <item>
       <title>Docs: MARK Entities</title>
-      <link>https://www.codyze.io/docs/mark-authors/define-entities/</link>
+      <link>http://localhost:8080/docs/mark-authors/define-entities/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.codyze.io/docs/mark-authors/define-entities/</guid>
+      <guid>http://localhost:8080/docs/mark-authors/define-entities/</guid>
       <description>
         
         
@@ -170,10 +170,10 @@
     
     <item>
       <title>Docs: MARK Rules</title>
-      <link>https://www.codyze.io/docs/mark-authors/mark-authors/</link>
+      <link>http://localhost:8080/docs/mark-authors/mark-authors/</link>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.codyze.io/docs/mark-authors/mark-authors/</guid>
+      <guid>http://localhost:8080/docs/mark-authors/mark-authors/</guid>
       <description>
         
         
